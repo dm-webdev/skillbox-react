@@ -1,0 +1,46 @@
+{
+  "name": "skillbox-react",
+  "version": "1.0.0",
+  "description": "This project was created to train the use of React technology.",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "cross-env NODE_ENV=development npx webpack --config webpack.config.js --mode development",
+    "build:prod": "cross-env NODE_ENV=production npx webpack --config webpack.config.js --mode production",
+    "dev": "cross-env NODE_ENV=development npx webpack-dev-server --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dm-webdev/skillbox-react.git"
+  },
+  "keywords": [
+    "JS",
+    "React",
+    "Redux",
+    "Type",
+    "Script",
+    "Webpack"
+  ],
+  "author": "\"Denis Mironenko <dmwebdevelop@gmail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dm-webdev/skillbox-react/issues"
+  },
+  "homepage": "https://github.com/dm-webdev/skillbox-react#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
+    "html-loader": "^1.3.0",
+    "html-webpack-plugin": "^4.4.1",
+    "path": "^0.12.7",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
