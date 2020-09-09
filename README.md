@@ -1,0 +1,1 @@
+This project was created to train the use of React technology.
