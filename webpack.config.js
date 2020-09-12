@@ -10,7 +10,7 @@ const IS_DEV = NODE_ENV == 'development';
 
 module.exports = {
   resolve: {
-    extensions: [".js", "json", ".jsx", ".ts", "tsx"],
+    extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
   },
 
   mode: NODE_ENV ? NODE_ENV : "development",
