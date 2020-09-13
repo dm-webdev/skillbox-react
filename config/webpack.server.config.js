@@ -1,5 +1,5 @@
 const path = require("path");
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -10,7 +10,7 @@ module.exports = {
     extensions: [".js", ".json", ".jsx"],
   },
 
-  mode: NODE_ENV ? NODE_ENV : "development",
+mode: NODE_ENV ? NODE_ENV : "development",
 
   target: "node",
 
@@ -27,15 +27,28 @@ module.exports = {
     minimize: false,
   },
 
-  plugins: [
-    new CleanWebpackPlugin(),
-  ],
+  plugins: [new CleanWebpackPlugin()],
 
   module: {
     rules: [
       {
         test: /\.[tj]sx?/,
         loader: "ts-loader",
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+                exportOnlyLocals: true,
+              },
+            },
+          },
+        ],
       },
     ],
   },

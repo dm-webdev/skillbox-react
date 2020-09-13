@@ -34,7 +34,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HotModuleReplacementPlugin(),
   ]
-  : [],
+  : [
+    new CleanWebpackPlugin(),
+  ],
 
   module: {
     rules: [
@@ -43,8 +45,18 @@ module.exports = {
         loader: "ts-loader",
       },
       {
-        test: /\.html$/i,
-        loader: "html-loader",
+        test: /\.css$/,
+        use: [
+          "style-loader", {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+              },
+            }
+          }
+        ],
       },
     ],
   },
