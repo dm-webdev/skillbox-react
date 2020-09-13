@@ -52,6 +52,20 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader", {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+              },
+            }
+          }
+        ],
+      },
     ],
   },
 };
