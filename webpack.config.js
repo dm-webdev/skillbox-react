@@ -47,11 +47,10 @@ module.exports = {
       {
         test: /\.[tj]sx?/,
         loader: "ts-loader",
-        exclude: /node_modules/,
       },
       {
         test: /\.html$/i,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
     ],
   },
