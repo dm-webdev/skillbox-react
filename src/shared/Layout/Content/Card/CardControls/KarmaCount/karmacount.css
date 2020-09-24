@@ -1,0 +1,57 @@
+.karmaCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.up {
+  border-bottom: 10px solid var(--grey_C4);
+  border-top: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.up:hover,
+.up:focus,
+.up:active {
+  border-bottom: 10px solid var(--green);
+}
+
+.down {
+  border-top: 10px solid var(--grey_C4);
+  border-bottom: none;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.down:hover,
+.down:focus,
+.down:active {
+  border-top: 10px solid var(--orange);
+}
+
+.karmaValue {
+  margin: 0 4px;
+  color: var(--grey_C4);
+}
+
+
+@media all and (min-width: 480px) {
+  .karmaCounter {    
+    position: absolute;
+    top: calc(50% - 15px - 0.6rem);
+    right: 20px;
+    flex-flow: column wrap;
+  }
+
+  .karmaValue {
+    margin: 7px 0px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .karmaValue {
+    color: var(--black);
+  }
+}

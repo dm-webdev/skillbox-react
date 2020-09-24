@@ -1,0 +1,35 @@
+.controls {
+  grid-area: cardcontrols;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px 20px;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shareButton,
+.saveButton {
+  width: 20px;
+  height: 20px;
+}
+
+@media all and (min-width: 480px) {
+  .controls {
+    padding-left: 20px;
+    padding-right: 70px;
+    padding-top: 0;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .controls {
+    padding-left: 38px;
+    padding-bottom: 0;
+  }
+}

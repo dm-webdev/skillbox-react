@@ -1,0 +1,53 @@
+.removeButton {
+  padding: 10px;
+  border-radius: 50%;
+  background-image: url('./removeButtonMob.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--grey_C4);
+}
+
+.removeButton:hover,
+.removeButton:active,
+.removeButton:focus {
+  background-color: var(--orange);
+}
+
+.removeButtonDesk {
+  display: none;
+}
+
+@media all and (min-width: 1024px) {
+  .removeButton {
+    padding-left: 14px;
+    padding-right: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey_99);
+    background-image: url('./removeButtonDesk.svg');
+    background-size: 10px 12px;
+    background-position: center left;
+    background-color: inherit;
+  }
+
+  .removeButton:hover,
+  .removeButton:active,
+  .removeButton:focus {
+    background-color: inherit;
+    color: var(--orange);
+    background-image: url('./removeButtonDeskHov.svg');
+  }
+
+  .removeButtonDesk {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .removeButton {
+    position: relative;
+    z-index: 1;
+  }
+}

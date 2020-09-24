@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 20px;
+}
+
+@media all and (min-width: 1024px) {
+  .header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 0;
+    padding: 40px 40px 0 40px;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .header {
+    padding: 68px 69px 0 69px; 
+  }
+}

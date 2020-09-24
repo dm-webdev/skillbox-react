@@ -1,0 +1,58 @@
+.statButton {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 50%;
+  background-image: url('./statButtonMob.svg');
+  background-size: 13px 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--grey_C4);
+}
+
+.statButton:hover,
+.statButton:active,
+.statButton:focus {
+  background-color: var(--orange);
+}
+
+.statButtonDesk {
+  display: none;
+}
+
+@media all and (min-width: 1024px) {
+  .statButton {
+    margin-right: 16px;
+    padding-left: 23px;
+    padding-right: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey_99);
+    background-image: url('./statButtonDesk.svg');
+    background-size: 16px 10px;
+    background-position: center left;
+    background-color: inherit;
+  }
+
+  .statButton:hover,
+  .statButton:active,
+  .statButton:focus {
+    background-color: inherit;
+    color: var(--orange);
+    background-image: url('./statButtonDeskHov.svg');
+  }
+
+  .statButtonDesk {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .statButton {
+    position: relative;
+    z-index: 1;
+  }
+}
