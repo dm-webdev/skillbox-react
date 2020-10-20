@@ -4,7 +4,7 @@
     "cardcontent"
     "cardpreview"
     "cardcontrols";
-    justify-content: start;
+  justify-content: center;
   position: relative;
   margin-bottom: 20px;
   border-radius: 7px;
@@ -16,6 +16,7 @@
     grid-template-areas: 
     "cardpreview cardcontent"
     "cardpreview cardcontrols";
+    justify-content: start;
     padding: 20px;
   }
 }

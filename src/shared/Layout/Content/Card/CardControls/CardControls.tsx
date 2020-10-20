@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./cardcontrols.css";
-import { CommenstButton } from "./CommenstButton";
+import { CommentsButton } from "./CommentsButton";
 import { KarmaCount } from "./KarmaCount";
 import { RemoveButton } from "./RemoveButton";
 import { ShareButton } from "./ShareButton";
@@ -11,7 +11,7 @@ export function CardControls() {
     <div className={styles.controls}>
       <KarmaCount />
 
-      <CommenstButton />
+      <CommentsButton />
 
       <div className={styles.action}>
         <StatButton />

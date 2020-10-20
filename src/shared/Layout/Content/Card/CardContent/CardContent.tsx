@@ -1,29 +1,36 @@
 import React from "react";
+import { ICard } from "../../CardsList";
 import styles from "./cardcontent.css";
 import { CreatedAt } from "./CreatedAt";
 
-export function CardContent() {
+interface IContent {
+  content: ICard;
+}
+
+export function CardContent(content: IContent) {
+  console.log(typeof(content.content.createDate))
+  
   return (
       <section className={styles.cardContent}>
         <div className={styles.metaData}>
           <div className={styles.userLink}>
             <img
               className={styles.avatar}
-              src="https://via.placeholder.com/20x20.png/FFFF00/000000?text=avatar"
-              alt="аватар"
+              src={ content.content.avatarImg }
+              alt={ content.content.userName }
             />
 
             <a href="#user-url" className={styles.username}>
-              Дмитрий Гришин
+              { content.content.userName }
             </a>
           </div>
 
-          <CreatedAt />
+          <CreatedAt createDate={ content.content.createDate } />
         </div>
 
         <h2 className={styles.title}>
           <a href="#post-url" className={styles.postLink}>
-            Следует отметить, что новая модель организационной деятельности...
+            { content.content.title }
           </a>
         </h2>
       </section>

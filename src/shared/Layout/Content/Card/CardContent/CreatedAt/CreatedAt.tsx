@@ -1,10 +1,15 @@
-import React from "react";
+import React, { createElement } from "react";
+import { getCreatedAt } from "../../../../../../utils/react/getCreatedAt";
 import styles from "./createdat.css";
 
-export function CreatedAt() {
+interface ICreateDate {
+  createDate: string;
+}
+
+export function CreatedAt( createDate: ICreateDate) {
   return (
     <span className={styles.createdAt}>
-      <span className={styles.publishedLabel}>опубликовано </span> 4 часа назад
+      <span className={styles.publishedLabel}>опубликовано </span> { getCreatedAt(new Date(createDate.createDate)) }
     </span>
   );
 }

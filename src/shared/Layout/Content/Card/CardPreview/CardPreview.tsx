@@ -1,10 +1,19 @@
 import React from 'react';
+import { ICard } from '../../CardsList';
 import styles from './cardpreview.css';
 
-export function CardPreview() {
+interface IPreview {
+  preview: ICard;
+}
+
+export function CardPreview(preview: IPreview) {
+  
   return (
     <div className={styles.preview}>
-      <img className={styles.previewImg} src="https://via.placeholder.com/320x320.png/FFFF00/000000?text=img" alt="изображение поста"/>
+      <img 
+        className={styles.previewImg} 
+        src={ preview.preview.img } 
+        alt={ preview.preview.title }/>
     </div>
   );
 }
