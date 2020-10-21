@@ -17,7 +17,7 @@ export function CardContent(content: IContent) {
             <img
               className={styles.avatar}
               src={ content.content.avatarImg }
-              alt={ content.content.userName }
+              alt={ content.content.userName.substring(0, 1).toUpperCase() }
             />
 
             <a href="#user-url" className={styles.username}>

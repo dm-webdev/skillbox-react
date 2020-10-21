@@ -6,7 +6,13 @@ import { RemoveButton } from "./RemoveButton";
 import { ShareButton } from "./ShareButton";
 import { StatButton } from "./StatButton";
 
-export function CardControls() {
+interface IControls {
+  id: string;
+  onClick?: () => void;
+  hideFn?: () => void;
+}
+
+export function CardControls({ id, onClick, hideFn }: IControls) {
   return (
     <div className={styles.controls}>
       <KarmaCount />
@@ -16,7 +22,7 @@ export function CardControls() {
       <div className={styles.action}>
         <StatButton />
         <ShareButton />
-        <RemoveButton />
+        <RemoveButton id={id} hideFn={hideFn} />
       </div>
     </div>
   );

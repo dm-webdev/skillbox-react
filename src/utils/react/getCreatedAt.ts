@@ -92,7 +92,16 @@ export function getCreatedAt(createDate: Date) {
   ];
 
   if (diffDate >= 8.64e7) {
-    return `${createDate.toLocaleString()}`;
+    // return `${createDate.toString()}`;
+    return `${new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour12: false,
+    }).format(new Date(createDate))}`
   } else if (diffDate < 8.64e7 && diffDate >= 36e5) {
     return `${Math.floor(diffDate / 36e5)} ${
         hoursName[Math.floor(diffDate / 36e5)]

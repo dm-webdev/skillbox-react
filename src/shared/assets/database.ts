@@ -1,7 +1,7 @@
 export default [
   {
     id: "123",
-    createDate: "2020-10-02T16:51:50.417+03:00",
+    createDate: "2020-10-21T16:51:50.417+03:00",
     title: "Лобзик электрический",
     userName: "Василий Иванович",
     avatarImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
@@ -9,7 +9,7 @@ export default [
   },
   {
     id: "321",
-    createDate: "2020-10-10T20:51:50.417+03:00",
+    createDate: "2020-10-20T20:51:50.417+03:00",
     title: "Рубанок электрический",
     userName: "Петр Кузмич",
     avatarImg: "https://via.placeholder.com/20x20.png/0000FF/CCFF33?text=avatar",

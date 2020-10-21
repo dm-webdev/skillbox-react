@@ -1,37 +1,45 @@
-import React from 'react';
-import styles from './dropdown.css';
+import React from "react";
+import styles from "./dropdown.css";
 
 interface IDropdownProps {
   button: React.ReactNode;
   children: React.ReactNode;
   isOpen?: boolean;
+  styleClass?: string;
   onOpen?: () => void;
   onClose?: () => void;
 }
 
 const NOOP = () => {};
 
-export function Dropdown({button, children, isOpen, onClose = NOOP, onOpen = NOOP}: IDropdownProps) {
+export function Dropdown({
+  button,
+  children,
+  isOpen,
+  styleClass,
+  onClose = NOOP,
+  onOpen = NOOP,
+}: IDropdownProps) {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(isOpen);
 
   React.useEffect(() => setIsDropdownOpen(isOpen), [isOpen]);
-  React.useEffect(() => isDropdownOpen ? onOpen() : onClose(), [isDropdownOpen]);
+  React.useEffect(() => (isDropdownOpen ? onOpen() : onClose()), [
+    isDropdownOpen,
+  ]);
 
   const handleOpen = () => {
     if (isOpen === undefined) {
-      setIsDropdownOpen(!isDropdownOpen)
+      setIsDropdownOpen(!isDropdownOpen);
     }
-  }
+  };
 
   return (
-    <div className={styles.container}>
-      <div onClick={ handleOpen }>
-        { button }
-      </div>
+    <div className={`${styles.container} ${styleClass}`}>
+      <div onClick={handleOpen}>{button}</div>
       {isDropdownOpen && (
         <div className={styles.listContainer}>
           <div className={styles.list} onClick={() => setIsDropdownOpen(false)}>
-            { children }
+            {children}
           </div>
         </div>
       )}

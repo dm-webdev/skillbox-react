@@ -1,29 +1,27 @@
-import React from 'react';
-import { ICard } from '../CardsList';
-import styles from './card.css';
-import { CardContent } from './CardContent';
-import { CardControls } from './CardControls';
-import { CardMenu } from './CardMenu';
-import { CardPreview } from './CardPreview';
+import React from "react";
+import { ICard } from "../CardsList";
+import styles from "./card.css";
+import { CardContent } from "./CardContent";
+import { CardControls } from "./CardControls";
+import { CardMenu } from "./CardMenu";
+import { CardPreview } from "./CardPreview";
 
 interface ICardItem {
   item: ICard;
+  hideFn?: () => void;
+  children?: React.ReactNode;
 }
 
-export function Card( card: ICardItem ) {
-  // console.log(card.item.id);
-
+export function Card(card: ICardItem) {
   return (
     <li className={styles.card}>
-     
-
       <CardContent content={card.item} />
-      
-      <CardPreview preview={ card.item } />
 
-      <CardMenu />
-      
-      <CardControls />
+      <CardPreview preview={card.item} />
+
+      <CardMenu hideFn={card.hideFn} />
+
+      <CardControls id={card.item.id} hideFn={card.hideFn} />
     </li>
   );
 }
