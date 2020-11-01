@@ -1,0 +1,33 @@
+.commentsButton {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-left: 20px;
+  background-image: url('comments.svg');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.commentsButton * {
+  color: var(--grey_C4);
+}
+
+.commentsNumber {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.commentsButton:hover,
+.commentsButton:active,
+.commentsButton:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}
+
+@media all and (min-width: 480px) { 
+  .commentsButton {
+    display: none;
+  }
+ }
+
+

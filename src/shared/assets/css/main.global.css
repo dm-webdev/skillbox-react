@@ -1,0 +1,72 @@
+:root {
+  --black: #333333;
+  --green: #A4CC33;
+  --orange: #CC6633;
+  --white: #FFFFFF;
+  --grey_F4: #F4F4F4;
+  --grey_F3: #F3F3F3;
+  --grey_D9: #D9D9D9;
+  --grey_C4: #C4C4C4;
+  --grey_99: #999999;
+  --grey_66: #666666;  
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--black); 
+  background-color: var(--grey_F4);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+picture {
+  font-size: 0;
+  line-height: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

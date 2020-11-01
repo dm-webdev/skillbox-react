@@ -6,5 +6,6 @@
 # production
 /dist
 
+/.vscode
 
 npm-debug.log*

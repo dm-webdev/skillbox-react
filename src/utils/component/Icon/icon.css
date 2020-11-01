@@ -1,0 +1,39 @@
+.s20 {
+  padding: 10px;
+  background-color: inherit;
+}
+
+.s30 {
+  padding: 15px;
+  background-color: inherit;
+} 
+
+.s40 {
+  padding: 20px;
+  background-color: inherit;
+} 
+
+.iconRemoveBtn {
+  background-image: url('./bgimg/removeButton.svg');
+  background-repeat: no-repeat;
+  background-position: center;  
+  background-size: contain;
+}
+
+.iconShareBtn {
+  background-image: url('./bgimg/shareButton.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.iconStatBtn {
+  background-image: url('./bgimg/statButton.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.block {
+  display: block;
+}

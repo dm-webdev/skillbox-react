@@ -1,0 +1,55 @@
+.shareButton {
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 50%;
+  background-image: url('./shareButtonMob.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--grey_C4);
+}
+
+.shareButton:hover,
+.shareButton:active,
+.shareButton:focus {
+  background-color: var(--orange);
+}
+
+.shareButtonDesk {
+  display: none;
+}
+
+@media all and (min-width: 1024px) {
+  .shareButton {
+    margin-right: 21px;
+    padding-left: 19px;
+    padding-right: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey_99);
+    background-image: url('./shareButtonDesk.svg');
+    background-size: 12px 14px;
+    background-position: center left;
+    background-color: inherit;
+  }
+
+  .shareButton:hover,
+  .shareButton:active,
+  .shareButton:focus {
+    background-color: inherit;
+    color: var(--orange);
+    background-image: url('./shareButtonDeskHov.svg');
+  }
+
+  .shareButtonDesk {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .shareButton {
+    position: relative;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,63 @@
+.card {
+  display: grid;
+  grid-template-areas: 
+    "cardcontent"
+    "cardpreview"
+    "cardcontrols";
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  background-color: var(--white);
+}
+
+@media all and (min-width: 480px) {
+  .card {
+    grid-template-areas: 
+    "cardpreview cardcontent"
+    "cardpreview cardcontrols";
+    justify-content: start;
+    padding: 20px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .card {
+    margin-bottom: 0;
+  }
+}
+
+
+@media all and (min-width: 1540px) {
+  .card {
+    margin-bottom: 2px;
+  }
+
+  .card:hover, 
+  .card:focus-within {
+    outline: 1px solid var(--grey_99);
+  }
+
+  .userLink:hover a {
+    text-decoration: underline;
+  }
+
+  .postLink::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+  }
+
+  .username {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card:hover h2 a,
+  .card:focus-within h2 a {
+    color: var(--orange);
+  }
+}
