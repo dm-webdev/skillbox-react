@@ -7,9 +7,7 @@ interface IContent {
   content: ICard;
 }
 
-export function CardContent(content: IContent) {
-  console.log(typeof(content.content.createDate))
-  
+export function CardContent(content: IContent) {  
   return (
       <section className={styles.cardContent}>
         <div className={styles.metaData}>

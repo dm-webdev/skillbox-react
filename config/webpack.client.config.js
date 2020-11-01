@@ -65,12 +65,16 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpeg|jpg|svg|gif|ico)$/i,
+        test: /\.(png|jpeg|jpg|gif|ico)$/i,
         loader: "file-loader",
         options: {
           outputPath: "img",
           name: IS_DEV ? "[name].[ext]" : "[name].[hash:base64:5].[ext]",
         }
+      },
+      {
+        test: /\.svg(\?.*)?$/,
+        use: ["url-loader", "svg-transform-loader"],
       },
       {
         test: /\.(woff|woff2)$/i,

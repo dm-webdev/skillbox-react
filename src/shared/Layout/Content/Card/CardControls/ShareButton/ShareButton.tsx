@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./sharebutton.css";
 
-export function ShareButton() {
+interface IShareBtn {
+  id: string;
+}
+
+export function ShareButton({ id }: IShareBtn) {
   return (
     <button className={styles.shareButton} aria-label="поделиться">
       <span className={styles.shareButtonDesk}>Поделиться</span>

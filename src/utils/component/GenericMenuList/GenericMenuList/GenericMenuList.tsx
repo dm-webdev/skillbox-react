@@ -2,14 +2,15 @@ import React, { ReactNode } from "react";
 import styles from "./genericmenulist.css";
 
 interface IItem {
-  id: string;
+  idBtn: string;
   text: string;
   onClick?: (id: string) => void;
   As?: "a" | "li" | "button" | "div";
   href?: string;
   type?: "submit" | "reset" | "button";
   classBtnImg?: string;
-  hide: boolean;
+  fn: string;
+  // hide: boolean;
 }
 
 interface IGenericListProps {
@@ -17,6 +18,7 @@ interface IGenericListProps {
   classItem?: string;
   classBtn?: string;
   hideFn?: () => void;
+  id: string;
 }
 
 const NOOP = () => {}; //ничего не делает
@@ -26,30 +28,35 @@ export function GenericMenuList({
   classItem,
   classBtn,
   hideFn,
+  id,
 }: IGenericListProps) {
   return (
+    
     <>
       {list.map(
         ({
           As = "button",
           text,
           onClick = NOOP,
-          id,
+          idBtn,
           href,
+          fn,
           type,
-          hide,
           classBtnImg,
         }) => (
           <li
             className={`${styles.item} ${classItem}`}
             onClick={() => {}}
-            key={id}
+            key={idBtn}
           >
             <As
               href={href}
               type={type}
               className={`${classBtn} ${classBtnImg}`}
-              onClick={hide ? hideFn : NOOP}
+              onClick={ (fn === "hide") ? hideFn : 
+                (fn === "console") ? ()=>console.log(id) :
+                ()=>{console.log("Hi chamomile")}
+              }
             >
               {text}
             </As>

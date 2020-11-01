@@ -19,7 +19,7 @@ export function Card(card: ICardItem) {
 
       <CardPreview preview={card.item} />
 
-      <CardMenu hideFn={card.hideFn} />
+      <CardMenu id={card.item.id} hideFn={card.hideFn} />
 
       <CardControls id={card.item.id} hideFn={card.hideFn} />
     </li>

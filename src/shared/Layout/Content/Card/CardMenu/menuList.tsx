@@ -2,39 +2,39 @@ import styles from "./cardmenu.css";
 
 export const menuList = [
   {
-    id: "comments",
+    idBtn: "comments",
     text: "Коментарии",
     classBtnImg: `${styles.commentsBtn}`,
-    hide: false,
+    fn: "console",
   },
   {
-    id: "share",
+    idBtn: "share",
     text: "Поделиться",
     classBtnImg: `${styles.shareBtn}`,
-    hide: false,
+    fn: "share",
   },
   { 
-    id: "hide",
+    idBtn: "hide",
     text: "Скрыть",
     classBtnImg: `${styles.hideBtn}`,
-    hide: true,
+    fn: "hide",
   },
   {
-    id: "save",
+    idBtn: "save",
     text: "Сохранить",
     classBtnImg: `${styles.saveBtn}`,
-    hide: false,
+    fn: "console",
   },
   {
-    id: "complain",
+    idBtn: "complain",
     text: "Пожаловаться",
     classBtnImg: `${styles.complainBtn}`,
-    hide: false,
+    fn: "console",
   },
   {
-    id: "close",
+    idBtn: "close",
     text: "Закрыть",
     classBtnImg: `${styles.closeBtn}`,
-    hide: false,
+    fn: "console",
   },
 ];

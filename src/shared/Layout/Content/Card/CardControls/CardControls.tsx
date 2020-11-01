@@ -15,13 +15,13 @@ interface IControls {
 export function CardControls({ id, onClick, hideFn }: IControls) {
   return (
     <div className={styles.controls}>
-      <KarmaCount />
+      <KarmaCount id={id} />
 
-      <CommentsButton />
+      <CommentsButton id={id} />
 
       <div className={styles.action}>
-        <StatButton />
-        <ShareButton />
+        <StatButton id={id} />
+        <ShareButton id={id} />
         <RemoveButton id={id} hideFn={hideFn} />
       </div>
     </div>

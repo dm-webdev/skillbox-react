@@ -8,6 +8,7 @@ interface IDropdownProps {
   styleClass?: string;
   onOpen?: () => void;
   onClose?: () => void;
+  id: string;
 }
 
 const NOOP = () => {};
