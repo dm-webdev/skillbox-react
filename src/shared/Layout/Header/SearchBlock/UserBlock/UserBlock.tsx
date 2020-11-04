@@ -6,9 +6,8 @@ import { Ecolors, Text } from "../../../../../utils/component/Text";
 interface IUserBlockProps {
   avatarSrc?: string;
   userName?: string;
-  clientId: string;
+  clientId?: string;
 }
-
 
 export function UserBlock({avatarSrc, userName, clientId}:IUserBlockProps) {
    

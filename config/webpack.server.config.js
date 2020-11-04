@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { DefinePlugin } = require("webpack");
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const nodeExternals = require("webpack-node-externals");
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -31,8 +32,7 @@ mode: NODE_ENV ? NODE_ENV : "development",
 
   plugins: [
     new CleanWebpackPlugin(),
-    new DefinePlugin({"process.env.CLIENT_ID": `${process.env.CLIENT_ID}`}),
-    // new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80r'"}),
+    new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80rQ'"}),
   ],
 
   module: {
