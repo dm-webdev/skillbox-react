@@ -1,0 +1,36 @@
+.message {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.message__count {
+  margin-right: 5px;
+  padding: 0.2em 0.5em;
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: 9px;
+  color: var(--white);
+  background-color: var(--orange);  
+}
+
+.message:hover > span:nth-child(2),
+.message:active > span:nth-child(2),
+.message:focus > span:nth-child(2) {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}
+
+
+@media all and (min-width: 480px) {
+  .message__count {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .message {
+    order: 1;
+  }
+}

@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './icon.css';
 import classNames from "classNames";
 
-type TIconSize = 20 | 30 | 40;
+type TIconSize = 14 | 20 | 30 | 40 | 50;
 
 export enum EIcons {
   iconRemoveBtn = "iconRemoveBtn",
   iconShareBtn = "iconShareBtn",
   iconStatBtn = "iconStatBtn",
+  iconAvatarAnon = "iconAvatarAnon",
+  iconMessage = "iconMessage"
 }
 
 interface ITextProps {

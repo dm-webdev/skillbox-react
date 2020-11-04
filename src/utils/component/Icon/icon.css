@@ -1,3 +1,8 @@
+.s14 {
+  padding: 7px;
+  background-color: inherit;
+}
+
 .s20 {
   padding: 10px;
   background-color: inherit;
@@ -10,6 +15,11 @@
 
 .s40 {
   padding: 20px;
+  background-color: inherit;
+}
+
+.s50 {
+  padding: 25px;
   background-color: inherit;
 } 
 
@@ -34,6 +44,74 @@
   background-size: contain;
 }
 
+.iconAvatarAnon {
+  background-image: url('./bgimg/avatar_anonim.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.iconMessage {
+  background-image: url('./bgimg/message.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .block {
   display: block;
+}
+
+@media all and (min-width: 480px) {
+  .t14 {
+    padding: 7px;
+    background-color: inherit;
+  }
+
+  .t20 {
+    padding: 10px;
+    background-color: inherit;
+  }
+  
+  .t30 {
+    padding: 15px;
+    background-color: inherit;
+  } 
+  
+  .t40 {
+    padding: 20px;
+    background-color: inherit;
+  }
+  
+  .t50 {
+    padding: 25px;
+    background-color: inherit;
+  } 
+}
+
+@media all and (min-width: 1024px) {
+  .d14 {
+    padding: 7px;
+    background-color: inherit;
+  }
+
+  .d20 {
+    padding: 10px;
+    background-color: inherit;
+  }
+  
+  .d30 {
+    padding: 15px;
+    background-color: inherit;
+  } 
+  
+  .d40 {
+    padding: 20px;
+    background-color: inherit;
+  }
+  
+  .d50 {
+    padding: 25px;
+    background-color: inherit;
+  } 
 }

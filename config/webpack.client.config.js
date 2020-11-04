@@ -1,10 +1,11 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { HotModuleReplacementPlugin } = require("webpack");
+const { HotModuleReplacementPlugin, DefinePlugin } = require("webpack");
 
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == "development";
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
+// const COMMON_PLUGINS = [ new DefinePlugin({"process.env.CLIENT_ID": ""tEnmcP62ZX80r""})]
 // const IS_PROD = NODE_ENV == 'production';
 
 module.exports = {
@@ -34,9 +35,13 @@ module.exports = {
   ? [
     new CleanWebpackPlugin(),
     new HotModuleReplacementPlugin(),
+    new DefinePlugin({"process.env.CLIENT_ID": `${process.env.CLIENT_ID}`}),
+    // new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80r'"}),
   ]
   : [
     new CleanWebpackPlugin(),
+    new DefinePlugin({"process.env.CLIENT_ID": `${process.env.CLIENT_ID}`}),
+    // new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80r'"}),
   ],
 
   module: {

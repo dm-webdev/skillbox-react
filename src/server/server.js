@@ -14,6 +14,13 @@ app.get("/", (req, res) => {
   );
 });
 
+app.get("/auth", (req, res) => {
+  // req.query.code;
+  res.send(
+    indexTemplate(ReactDOM.renderToString(App()))    
+  );
+});
+
 app.listen(9000, () => {
   console.log("Server started on http://localhost:9000");
 });

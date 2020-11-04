@@ -1,0 +1,56 @@
+.userBlockLink {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userAvatar {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  transition: border-color .2s;
+}
+.avatarImg {
+  object-fit: cover;
+}
+
+.userName {
+  display: none;
+}
+
+.userBlockLink:hover > .userName,
+.userBlockLink:active > .userName,
+.userBlockLink:focus > .userName {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}
+
+.userBlockLink:hover > .userAvatar,
+.userBlockLink:active > .userAvatar,
+.userBlockLink:focus > .userAvatar {
+  border-color: var(--orange);
+}
+
+@media all and (min-width: 480px) {
+  .userAvatar {
+    width: 60px;
+    height: 60px;    
+    margin-right: 13px;
+  }
+
+  .userName {
+    display: block;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .userBlockLink {
+    order: 3;
+  }
+}

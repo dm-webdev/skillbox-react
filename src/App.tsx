@@ -13,6 +13,7 @@ import database from "./shared/assets/database";
 import { Icon, EIcons } from "./utils/component/Icon";
 import { Break } from "./utils/component/Break";
 import { Text } from "./utils/component/Text/Text";
+import { LoadingIndicator } from "./shared/Layout/Common/LoadingIndicator";
 
 
 function AppComponent() {
@@ -20,7 +21,8 @@ function AppComponent() {
     <Layout>
       <Header />
       <Content>
-        <div>
+        <LoadingIndicator />
+        {/* <div>
           <p>Тестовый блок для домашнего задания</p>
           <button style={{backgroundColor: "red"}}>
             <Icon name={EIcons.iconRemoveBtn} size={40}></Icon>
@@ -50,7 +52,7 @@ function AppComponent() {
           <Break size={20} top />
           <Text size={14}>Test2</Text>        
           <Text size={20} bold={true}>Test3</Text>         
-        </div>
+        </div> */}
         <CardsList list={database} />
       </Content>
     </Layout>
