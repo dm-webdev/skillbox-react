@@ -8,14 +8,15 @@ import { StatButton } from "./StatButton";
 
 interface IControls {
   id: string;
+  score?: string;
   onClick?: () => void;
   hideFn?: () => void;
 }
 
-export function CardControls({ id, onClick, hideFn }: IControls) {
+export function CardControls({ id, score, onClick, hideFn }: IControls) {
   return (
     <div className={styles.controls}>
-      <KarmaCount id={id} />
+      <KarmaCount id={id} score={score}/>
 
       <CommentsButton id={id} />
 

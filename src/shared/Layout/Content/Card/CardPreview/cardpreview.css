@@ -19,11 +19,19 @@
     max-height: 150px;
     border-radius: 3px;
   }
+
+  .previewImg {
+    width: 180px;
+  }
 }
 
 @media all and (min-width: 1024px) {
   .preview {
     max-width: 190px;    
     max-height: 107px;
+  }
+
+  .previewImg {
+    width: 200px;
   }
 }

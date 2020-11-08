@@ -1,39 +1,43 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Card } from "../Card/Card";
 import styles from "./cardslist.css";
-
-const R = require("ramda");
+import database from "../../../assets/database";
+import { bestArticleContext } from "../../../context/bestArticleContext";
 
 export interface ICard {
   id: string;
   title: string;
   createDate: string;
-  userName: string;
-  avatarImg: string;
-  img: string;
+  authorName: string;
+  authorImg: string;
+  articleImg: string;
+  score: string;
 }
 
-interface ICardListProps {
-  list: ICard[];
-}
-
-const NOOP = () => {};
-
-export function CardsList({ list }: ICardListProps) {
-  const [cardList, setList] = React.useState(list);
+export function CardsList() {
+  const cardList = useContext(bestArticleContext);
+  const [list, setList] = useState(database);
+  
+  useEffect(() => {
+    if (cardList.length > 1) {
+      setList(cardList);
+    } else {
+      console.log(cardList.length);
+    }
+  }, [cardList]);
 
   const handleItemClick = (id: string) => {
-    setList(cardList.filter((item) => item.id !== id));
+    setList(list.filter((item) => item.id !== id));
   };
 
   return (
     <ul className={styles.cardsList}>
-      {cardList.map((item: ICard, index) => (
-          <Card
-            key={item.id}
-            item={item}
-            hideFn={() => handleItemClick(item.id)}
-          ></Card>
+      {list.map((item: ICard) => (
+        <Card
+          key={item.id}
+          item={item}
+          hideFn={() => handleItemClick(item.id)}
+        ></Card>
       ))}
     </ul>
   );

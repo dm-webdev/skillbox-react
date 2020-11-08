@@ -9,7 +9,7 @@ interface ICreateDate {
 export function CreatedAt( createDate: ICreateDate) {
   return (
     <span className={styles.createdAt}>
-      <span className={styles.publishedLabel}>опубликовано </span> { getCreatedAt(new Date(createDate.createDate)) }
+      <span className={styles.publishedLabel}>опубликовано </span> { getCreatedAt(createDate.createDate) }
     </span>
   );
 }

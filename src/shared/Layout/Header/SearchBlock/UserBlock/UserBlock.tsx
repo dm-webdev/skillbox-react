@@ -6,13 +6,11 @@ import { Ecolors, Text } from "../../../../../utils/component/Text";
 interface IUserBlockProps {
   avatarSrc?: string;
   userName?: string;
-  clientId?: string;
 }
 
-export function UserBlock({avatarSrc, userName, clientId}:IUserBlockProps) {
-   
+export function UserBlock({avatarSrc, userName}:IUserBlockProps) {   
   return (
-    <a className={styles.userBlockLink} href={`https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=random_string&redirect_uri=http://localhost:9000/auth&duration=permanent&scope=read submit identity`}>
+    <a className={styles.userBlockLink} href={`https://www.reddit.com/api/v1/authorize?client_id=${process.env.CLIENT_ID}&response_type=code&state=random_string&redirect_uri=http://localhost:9000/auth&duration=permanent&scope=read submit identity`}>
       <div className={styles.userAvatar}>
         {avatarSrc
           ? <img src={avatarSrc} alt={userName} className={styles.avatarImg} />
@@ -20,7 +18,7 @@ export function UserBlock({avatarSrc, userName, clientId}:IUserBlockProps) {
         }
       </div>
       <div className={styles.userName}>
-        <Text size={20} color={userName ? Ecolors.black : Ecolors.grey_99}>{userName || "Аноним"}</Text>
+        <Text size={20} color={userName ? Ecolors.black : Ecolors.grey_99}>{ userName || "Аноним" }</Text>
       </div>
     </a>
   );

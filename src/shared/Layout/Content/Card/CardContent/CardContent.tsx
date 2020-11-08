@@ -14,12 +14,12 @@ export function CardContent(content: IContent) {
           <div className={styles.userLink}>
             <img
               className={styles.avatar}
-              src={ content.content.avatarImg }
-              alt={ content.content.userName.substring(0, 1).toUpperCase() }
+              src={ content.content.authorImg }
+              alt={ content.content.authorName.substring(0, 1).toUpperCase() }
             />
 
             <a href="#user-url" className={styles.username}>
-              { content.content.userName }
+              { content.content.authorName }
             </a>
           </div>
 

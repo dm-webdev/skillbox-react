@@ -1,6 +1,6 @@
-export function getCreatedAt(createDate: Date) {
+export function getCreatedAt(createDate: any) {
   const nowDate = Date.now();
-  const diffDate = nowDate - Date.parse(createDate.toString());
+  const diffDate = nowDate - createDate;
   const hoursName = [
     "",
     "час",
@@ -92,7 +92,6 @@ export function getCreatedAt(createDate: Date) {
   ];
 
   if (diffDate >= 8.64e7) {
-    // return `${createDate.toString()}`;
     return `${new Intl.DateTimeFormat("en-US", {
       hour: "numeric",
       minute: "numeric",
@@ -101,7 +100,7 @@ export function getCreatedAt(createDate: Date) {
       month: "numeric",
       day: "numeric",
       hour12: false,
-    }).format(new Date(createDate))}`
+    }).format(createDate)}`
   } else if (diffDate < 8.64e7 && diffDate >= 36e5) {
     return `${Math.floor(diffDate / 36e5)} ${
         hoursName[Math.floor(diffDate / 36e5)]

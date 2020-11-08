@@ -12,7 +12,7 @@ export function CardPreview(preview: IPreview) {
     <div className={styles.preview}>
       <img 
         className={styles.previewImg} 
-        src={ preview.preview.img } 
+        src={ preview.preview.articleImg } 
         alt={ preview.preview.title }/>
     </div>
   );

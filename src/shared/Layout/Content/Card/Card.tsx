@@ -21,7 +21,7 @@ export function Card(card: ICardItem) {
 
       <CardMenu id={card.item.id} hideFn={card.hideFn} />
 
-      <CardControls id={card.item.id} hideFn={card.hideFn} />
+      <CardControls id={card.item.id} hideFn={card.hideFn} score={card.item.score}/>
     </li>
   );
 }

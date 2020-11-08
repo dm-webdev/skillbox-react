@@ -1,13 +1,23 @@
 import React from "react";
 import styles from "./loadingindicator.css";
 
-export function LoadingIndicator() {
+interface ILoader {
+  loading: boolean | undefined;
+}
+
+export function LoadingIndicator({loading}:ILoader) {
+  
   return (
-    <div className={styles.cssloadThecube}>
-      <div className={`${styles.cssloadCube} ${styles.cssloadC1}`} />
-      <div className={`${styles.cssloadCube} ${styles.cssloadC2}`} />
-      <div className={`${styles.cssloadCube} ${styles.cssloadC4}`} />
-      <div className={`${styles.cssloadCube} ${styles.cssloadC3}`} />
-    </div>
+    <div>
+      {loading ?
+        <div className={styles.cssloadThecube}>
+          <div className={`${styles.cssloadCube} ${styles.cssloadC1}`} />
+          <div className={`${styles.cssloadCube} ${styles.cssloadC2}`} />
+          <div className={`${styles.cssloadCube} ${styles.cssloadC4}`} />
+          <div className={`${styles.cssloadCube} ${styles.cssloadC3}`} />
+        </div>
+      : ""
+      }
+    </div> 
   );
 }
