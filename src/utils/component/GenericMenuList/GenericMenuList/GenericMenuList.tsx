@@ -31,7 +31,6 @@ export function GenericMenuList({
   id,
 }: IGenericListProps) {
   return (
-    
     <>
       {list.map(
         ({
@@ -53,9 +52,14 @@ export function GenericMenuList({
               href={href}
               type={type}
               className={`${classBtn} ${classBtnImg}`}
-              onClick={ (fn === "hide") ? hideFn : 
-                (fn === "console") ? ()=>console.log(id) :
-                ()=>{console.log("Hi chamomile")}
+              onClick={
+                fn === "hide"
+                  ? hideFn
+                  : fn === "console"
+                  ? () => console.log(id)
+                  : () => {
+                      console.log("Hi chamomile");
+                    }
               }
             >
               {text}

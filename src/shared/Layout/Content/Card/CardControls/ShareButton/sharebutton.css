@@ -9,6 +9,36 @@
   background-color: var(--grey_C4);
 }
 
+.shareButtonModal {
+  padding: 10px;
+  background-image: url('./shareButtonDesk.svg');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shareButtonComment {
+  padding: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey_99);
+  background-position: center left;
+  background-image: url('./shareButtonDesk.svg');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shareButtonModal:hover,
+.shareButtonModal:active,
+.shareButtonModal:focus,
+.shareButtonComment:hover,
+.shareButtonComment:active,
+.shareButtonComment:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}
+
 .shareButton:hover,
 .shareButton:active,
 .shareButton:focus {
@@ -17,6 +47,17 @@
 
 .shareButtonDesk {
   display: none;
+}
+
+@media all and (min-width: 480px) {
+  .shareButtonComment > .shareButtonDesk {
+    display: inline-block;
+  }
+
+  .shareButtonComment {
+    padding-left: 19px;
+    background-position: left center;
+  }
 }
 
 @media all and (min-width: 1024px) {
@@ -32,6 +73,16 @@
     background-size: 12px 14px;
     background-position: center left;
     background-color: inherit;
+  }
+
+  .shareButtonModal {
+    padding-left: 19px;
+    padding-right: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey_99);
+    background-position: center left;
   }
 
   .shareButton:hover,

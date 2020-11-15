@@ -1,0 +1,5 @@
+.modalArticle {
+  margin: 10px 0;
+  padding: 0 25px;
+  border-bottom: 1px solid var(--grey_D9);
+}

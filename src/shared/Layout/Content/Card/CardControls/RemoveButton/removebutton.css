@@ -8,6 +8,21 @@
   background-color: var(--grey_C4);
 }
 
+.removeButtonModal {
+  padding: 10px;
+  border-radius: 50%;
+  background-image: url('../../CardMenu/hide.svg');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.removeButtonModal:hover,
+.removeButtonModal:active,
+.removeButtonModal:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}
+
 .removeButton:hover,
 .removeButton:active,
 .removeButton:focus {
@@ -30,6 +45,16 @@
     background-size: 10px 12px;
     background-position: center left;
     background-color: inherit;
+  }
+
+  .removeButtonModal {
+    padding-left: 25px;
+    padding-right: 0;
+    border-radius: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey_C4);
+    background-position: center left;
   }
 
   .removeButton:hover,

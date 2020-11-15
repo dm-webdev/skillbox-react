@@ -3,6 +3,11 @@
   color: var(--grey_99);
 }
 
+.createdAtModal,
+.createdAtModal * {
+  color: var(--grey_99);
+}
+
 .publishedLabel {
   display: none;
 }
@@ -14,6 +19,13 @@
 
   .createdAt {
     order: 1;
+    margin-right: 6px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .createdAtModal {
+    order: 2;
     margin-right: 6px;
     font-size: 14px;
     line-height: 16px;

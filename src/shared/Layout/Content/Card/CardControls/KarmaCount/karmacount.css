@@ -5,6 +5,13 @@
   flex-flow: row wrap;
 }
 
+.karmaCounterModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
 .up {
   border-bottom: 10px solid var(--grey_C4);
   border-top: none;

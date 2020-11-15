@@ -17,6 +17,8 @@ export function useBestArticles() {
         })
         .then((resp) => {
           const collection = resp.data.data.children;
+          // console.log(collection);
+          console.log(resp);
           const bestArticles = createCollection(collection, "data");
           setList(bestArticles);
         })

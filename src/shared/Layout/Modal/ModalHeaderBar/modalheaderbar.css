@@ -1,0 +1,21 @@
+.modal__headerBar {
+  position: relative;
+  display: flex;
+  flex-grow: row nowrap
+}
+
+.hideBtn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  transition: filter .2s;
+}
+
+.hideBtn:hover,
+.hideBtn:active,
+.hideBtn:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}

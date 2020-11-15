@@ -1,0 +1,22 @@
+.saveBtn {
+  color: var(--grey_C4);
+  font-size: 14px;
+}
+
+.saveBtn:hover,
+.saveBtn:active,
+.saveBtn:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg)
+    brightness(83%) contrast(91%);
+}
+
+.saveBtn__title {
+  display: none;
+}
+
+@media all and (min-width: 1024px) {
+  .saveBtn__title {
+    display: inline;
+    margin-left: 5px;
+  }
+}

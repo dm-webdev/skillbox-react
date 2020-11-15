@@ -12,6 +12,17 @@ export function createCollection(originalArr: Array<any>, data: string) {
       authorImg: "",
       articleImg: "",
       score: "",
+      subreddit: "",
+      comments: [
+        {
+          id: "",
+          commentAuthorImg: "",
+          commentAuthorName: "",
+          commentDate: "",
+          league: "",
+          commentText: "",
+        },
+      ],      
     };
   
     for (const key in obj[data]) {
@@ -37,6 +48,9 @@ export function createCollection(originalArr: Array<any>, data: string) {
           break;
         case "score": 
           myObj.score=obj[data][key].toString();
+        break;
+        case "subreddit":
+          myObj.subreddit=obj[data][key];
         break;
         default:
           console.log("no entries");

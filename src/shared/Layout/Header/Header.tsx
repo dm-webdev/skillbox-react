@@ -9,7 +9,7 @@ export function Header() {
     <header className={styles.header}>
       <SearchBlock />
       <ThreadTitle />
-      <SortBlock />
+      <SortBlock />      
     </header>
   );
 }

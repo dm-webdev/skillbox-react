@@ -1,0 +1,17 @@
+.commentList {
+  padding: 25px 0px;
+}
+
+.cardsList {
+  margin-top: 15px;
+  padding: 25px 0px;
+  border-top: 1px solid var(--grey_D9);
+}
+
+
+
+@media all and (min-width: 1024px) { 
+  .commentList {
+    padding: 30px 0px;
+  }
+}

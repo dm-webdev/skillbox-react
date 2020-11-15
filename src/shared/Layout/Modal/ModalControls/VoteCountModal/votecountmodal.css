@@ -1,0 +1,6 @@
+.voteCount {
+  margin-left: 10%;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey_99);
+}

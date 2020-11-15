@@ -1,0 +1,32 @@
+.commentCard:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.commentCard {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.commentText {
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--grey_33);
+}
+
+.decorLine {
+  flex-grow: 1;
+  align-self: center;
+  width: 3px;
+  background-color: var(--grey_D9);
+}
+
+.commentContent {
+  flex-grow: 1;
+}
+
+@media all and (min-width: 408px) { 
+  .commentText {
+    font-size: 14px;
+  }
+}

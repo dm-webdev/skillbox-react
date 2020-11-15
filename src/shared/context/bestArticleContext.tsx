@@ -9,7 +9,17 @@ export interface IBestArticlesContent {
   authorImg: string;
   articleImg: string;
   score: string;
-}
+  subreddit: string;
+  comments: 
+    {
+      id: string;
+      commentAuthorImg: string;
+      commentAuthorName: string;
+      commentDate: string;
+      league: string;
+      commentText: string;
+    }[];
+  }
 
 export const bestArticleContext = React.createContext<IBestArticlesContent[]>([]);
 

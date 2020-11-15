@@ -8,7 +8,7 @@ import { LoadingIndicator } from "../../Common/LoadingIndicator";
 import { userContext } from "../../../context/userContext";
 
 export function SearchBlock() {
-  const { loading, iconImg, name, messageCount} = useContext(userContext);  
+  const { loading, iconImg, name, messageCount } = useContext(userContext);  
 
   return (
     <div className={styles.searchBlock}>

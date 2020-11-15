@@ -1,0 +1,13 @@
+.controlBar {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@media all and (min-width: 900px) {
+  .controlBar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }  
+}

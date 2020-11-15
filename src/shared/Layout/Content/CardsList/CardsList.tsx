@@ -12,6 +12,16 @@ export interface ICard {
   authorImg: string;
   articleImg: string;
   score: string;
+  subreddit: string,
+  comments: 
+  {
+    id: string;
+    commentAuthorImg: string;
+    commentAuthorName: string;
+    commentDate: string;
+    league: string;
+    commentText: string;
+  }[];
 }
 
 export function CardsList() {
@@ -29,6 +39,8 @@ export function CardsList() {
   const handleItemClick = (id: string) => {
     setList(list.filter((item) => item.id !== id));
   };
+
+  
 
   return (
     <ul className={styles.cardsList}>

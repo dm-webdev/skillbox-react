@@ -1,16 +1,22 @@
 import React from "react";
 import styles from "./removebutton.css";
+import classNames from "classNames";
 
 interface IRemoveBtn {
   id: string;
   onClick?: () => void;
   hideFn?: () => void;
+  name: "removeButton" | "removeButtonModal";
 }
 
-export function RemoveButton({ id, onClick, hideFn }: IRemoveBtn) {
+export function RemoveButton({ id, onClick, hideFn, name }: IRemoveBtn) {
+  const classes = classNames(
+    styles[name],
+  );
+
   return (
     <button
-      className={styles.removeButton}
+      className={classes}
       aria-label="удалить"
       onClick={hideFn}
     >

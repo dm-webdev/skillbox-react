@@ -1,0 +1,33 @@
+.answerButton {
+  padding: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey_99);
+  background-position: center left;
+  background-image: url('../../../../../Content/Card/CardControls/CommentsButton/comments.svg');
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.answerButton:hover,
+.answerButton:active,
+.answerButton:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg) brightness(83%) contrast(91%);
+}
+
+.answerButtonDesk {
+  display: none;
+}
+
+@media all and (min-width: 480px) {
+  .answerButtonDesk {
+    display: inline-block;
+  }
+
+  .answerButton {
+    padding-left: 19px;
+    background-position: left center;
+  }
+}

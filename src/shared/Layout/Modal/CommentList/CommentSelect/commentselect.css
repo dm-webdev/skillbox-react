@@ -1,0 +1,9 @@
+.comment__select_text {
+  color: var(--grey_99);
+}
+
+.comment__select {
+  align-self: flex-start;
+  color: var(--orange);
+  border: none;
+}

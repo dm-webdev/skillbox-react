@@ -9,7 +9,11 @@ export enum EIcons {
   iconShareBtn = "iconShareBtn",
   iconStatBtn = "iconStatBtn",
   iconAvatarAnon = "iconAvatarAnon",
-  iconMessage = "iconMessage"
+  iconMessage = "iconMessage",
+  iconHideBtn = "iconHideBtn",
+  iconCommentBtn = "iconCommentBtn",
+  iconSaveBtn = "iconSaveBtn",
+  iconComplainBtn = "iconComplainBtn",
 }
 
 interface ITextProps {

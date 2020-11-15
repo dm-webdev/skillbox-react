@@ -1,0 +1,33 @@
+.complainBtn {
+  color: var(--grey_99);
+  font-size: 14px;
+}
+
+.complainBtn:hover,
+.complainBtn:active,
+.complainBtn:focus {
+  filter: invert(56%) sepia(16%) saturate(2172%) hue-rotate(334deg)
+    brightness(83%) contrast(91%);
+}
+
+.complainBtn__title {
+  display: none;
+}
+
+.complainBtnComment__title {
+  display: none;
+}
+
+@media all and (min-width: 480px) {
+  .complainBtnComment__title {
+    display: inline;
+    margin-left: 5px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .complainBtn__title {
+    display: inline;
+    margin-left: 5px;
+  }
+}

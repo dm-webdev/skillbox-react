@@ -8,7 +8,7 @@ import { StatButton } from "./StatButton";
 
 interface IControls {
   id: string;
-  score?: string;
+  score: string;
   onClick?: () => void;
   hideFn?: () => void;
 }
@@ -16,14 +16,14 @@ interface IControls {
 export function CardControls({ id, score, onClick, hideFn }: IControls) {
   return (
     <div className={styles.controls}>
-      <KarmaCount id={id} score={score}/>
+      <KarmaCount id={id} score={score} name="karmaCounter" />
 
-      <CommentsButton id={id} />
+      <CommentsButton id={id} name="commentsButton" numberOfComments={score[0] + score[1]} />
 
       <div className={styles.action}>
         <StatButton id={id} />
-        <ShareButton id={id} />
-        <RemoveButton id={id} hideFn={hideFn} />
+        <ShareButton id={id} name="shareButton" />
+        <RemoveButton id={id} hideFn={ hideFn } name="removeButton" />
       </div>
     </div>
   );

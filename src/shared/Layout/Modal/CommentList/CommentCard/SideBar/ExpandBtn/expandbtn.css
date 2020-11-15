@@ -1,0 +1,15 @@
+.expandBtn {
+  margin-bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: var(--grey_D9) transparent transparent transparent;
+}
+
+.expandBtn:hover,
+.expandBtn:focus,
+.expandBtn:active {
+  border-color: var(--orange) transparent transparent transparent;
+  filter: drop-shadow(0 0 2px var(--orange));
+}

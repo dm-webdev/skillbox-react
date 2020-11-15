@@ -7,6 +7,25 @@ export default [
     authorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
     articleImg: "https://via.placeholder.com/250x250.jpg/CCFF33/000000?text=лобзик электрический",
     score: "10",
+    subreddit: "Showerthoughts",
+    comments: [
+      {
+        id: "12",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Василий Иванович",
+        commentDate: "1603288310417",
+        league: "Лига экономистов",
+        commentText: "Для ровных пропилов он не годится, пилка стоит криво.",
+      },
+      {
+        id: "122",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Петр Петрович",
+        league: "Лига артистов",
+        commentDate: "1603288310417",
+        commentText: "С задачей по укладке ламината справился на отлично.",
+      },
+    ],
   },
   {
     id: "321",
@@ -16,6 +35,25 @@ export default [
     authorImg: "https://via.placeholder.com/20x20.png/0000FF/CCFF33?text=avatar",
     articleImg: "https://via.placeholder.com/250x250.jpg/003399/000000?text=рубанок электрический",
     score: "20",
+    subreddit: "Tolls",
+    comments: [
+      {
+        id: "124",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Петр Кузмич",
+        commentDate: "1603288310417",
+        league: "Лига футуристов",
+        commentText: "Рубанком доволен, есть регулировка глубины. Отстругал с лёгкостью 5 досок шестиметровых со всех сторон.",
+      },
+      {
+        id: "1245",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Петр Петрович",
+        league: "Лига артистов",
+        commentDate: "1603288310417",
+        commentText: "Сначала планировал взять рубанок в аренду на пару дней, но оказалось что это дороже чем купить одноразовый новый.",
+      },
+    ],
   },
   {
     id: "456",
@@ -25,6 +63,25 @@ export default [
     authorImg: "https://via.placeholder.com/20x20.png/330333/CCFF33?text=avatar",
     articleImg: "https://via.placeholder.com/250x250.jpg/990033/000000?text=эксцентриковая шлифмашина",
     score: "2546",
+    subreddit: "Showerthoughts",
+    comments: [
+      {
+        id: "1246",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Владимир Ильич",
+        commentDate: "1603288310417",
+        league: "Лига строителей",
+        commentText: "ЭТО НE НАДО ПОКУПАТЬ. НЕ РЕКОМЕНДУЮ!!!",
+      },
+      {
+        id: "1247",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Артур Мухамбетович",
+        league: "Лига программистов",
+        commentDate: "1603288310417",
+        commentText: "Пользуюсь аппаратом уже больше двух лет, шлифовал и мягкую древесину (ель, сосна).",
+      },
+    ],
   },
   {
     id: "654",
@@ -34,6 +91,25 @@ export default [
     authorImg: "https://via.placeholder.com/20x20.png/FF9933/CCFF33?text=avatar",
     articleImg: "https://via.placeholder.com/250x250.jpg/3300CC/000000?text=машина углошлифовальная",
     score: "104848",
+    subreddit: "Showerthoughts",
+    comments: [
+      {
+        id: "1248",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Василий Иванович",
+        commentDate: "1603288310417",
+        league: "Лига авантюристов",
+        commentText: "Купил специальный диск по дереву. После шестого пильного блузка болгарка затрещала, будто в ней внутри все рассыпалась напрочь.",
+      },
+      {
+        id: "1249",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Петр Петрович",
+        league: "Лига гоблинов",
+        commentDate: "1602439250417",
+        commentText: "Отличная машинка. Брал для обрезки профильных труб на высоте. Справляется со своей задачей на 100%.",
+      },
+    ],
   },
   {
     id: "789",
@@ -43,5 +119,24 @@ export default [
     authorImg: "https://via.placeholder.com/20x20.png/FF0033/CCFF33?text=avatar",
     articleImg: "https://via.placeholder.com/250x250.jpg/FF9966/000000?text=фрезер",
     score: "8741",
+    subreddit: "Инструмент",
+    comments: [
+      {
+        id: "12459",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Василий Иванович",
+        commentDate: "1603288310417",
+        league: "Лига лгбт",
+        commentText: "Вполне нормальный китайский девайс (Ну очень похож на кельнер 1450 вт) на фоне 100% всей китайской продукции на прилавках РФ зная что те же Бош Макита //   сделаны там же в Чайне как и этот безымянный фрезер (шилдик приклей кельнер макита и будет стоить в разы больше) сгорит и выкинуть не жалко!!!",
+      },
+      {
+        id: "12426",
+        commentAuthorImg: "https://via.placeholder.com/20x20.png/FFFF00/CCFF33?text=avatar",
+        commentAuthorName: "Петр Петрович",
+        league: "Лига любителей пива",
+        commentDate: "1602439250417",
+        commentText: "Мой первый фрезер. купил потому что дешёвый и необходимый для работы. но последнее время при работе начал сам по себе глохнуть, не зависимо от //   нагрузки.",
+      },
+    ],
   },
 ];

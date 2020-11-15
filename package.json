@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/dm-webdev/skillbox-react#readme",
   "devDependencies": {
+    "@babel/preset-react": "^7.12.5",
     "@hot-loader/react-dom": "^16.14.0",
     "@types/classnames": "^2.2.11",
     "@types/enzyme": "^3.10.8",

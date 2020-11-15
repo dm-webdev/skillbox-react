@@ -1,0 +1,101 @@
+.btnGroup {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  border-radius: 0px 0px 0px 3px;
+  background: var(--grey_E5);  
+}
+
+.control__item {
+  display: flex;
+  justify-content: center; 
+  width: 16%;
+}
+
+.control__btn {
+  position: relative;
+  padding: 17px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 14px;
+  transition: filter 0.2s;
+}
+
+.control__btn:hover,
+.control__btn:active,
+.control__btn:focus {
+  filter: invert(46%) sepia(80%) saturate(564%) hue-rotate(337deg) brightness(87%) contrast(81%);
+}
+
+.control__btn:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--orange);
+}
+
+.scriptBtn {  
+  background-image: url('./icons/script.svg');
+}
+
+.pictureBtn {  
+  background-image: url('./icons/picture.svg');
+}
+
+.documentBtn {
+  background-image: url('./icons/document.svg');
+}
+
+.uploadBtn {
+  background-image: url('./icons/upload.svg');
+}
+
+.photoBtn {
+  background-image: url('./icons/photo.svg');
+}
+
+.updateBtn {
+  background-image: url('./icons/update.svg');
+}
+
+.linkBtn {
+  background-image: url('./icons/link.svg');
+}
+
+.soundBtn {
+  background-image: url('./icons/sound.svg');
+}
+
+.chatBtn {
+  background-image: url('./icons/chat.svg');
+}
+
+.editdBtn {
+  background-image: url('./icons/edit.svg');
+}
+
+.registerBtn {
+  background-image: url('./icons/register.svg');
+}
+
+.pdfBtn {
+  background-image: url('./icons/pdf.svg');
+}
+
+@media all and (min-width: 900px) { 
+  .control__item {
+    width: 8%;
+  }
+
+  .control__btn {
+    padding: 26px 20px;
+    background-size: auto 18px;
+  }
+ }
+
+

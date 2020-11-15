@@ -1,0 +1,16 @@
+.rollUp {
+  margin-top: 3px;
+  margin-bottom: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent var(--grey_D9) transparent;
+}
+
+.rollUp:hover,
+.rollUp:focus,
+.rollUp:active {
+  border-color: transparent transparent var(--orange) transparent;
+  filter: drop-shadow(0 0 2px var(--orange));
+}

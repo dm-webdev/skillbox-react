@@ -58,6 +58,34 @@
   background-size: contain;
 }
 
+.iconHideBtn {
+  background-image: url('./bgimg/hideButton.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.iconCommentBtn {
+  background-image: url('./bgimg/commentBtn.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.iconSaveBtn {
+  background-image: url('./bgimg/saveButton.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.iconComplainBtn {
+  background-image: url('./bgimg/complain.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .block {
   display: block;
 }
