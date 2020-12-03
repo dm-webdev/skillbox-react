@@ -1,31 +1,37 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { createCollection } from "../utils/js/createCollection";
-
 import { ICard } from "../shared/Layout/Content/CardsList/CardsList";
-import { tokenContext } from "../shared/context/tokenContext";
+import { useDispatch, useSelector } from "react-redux";
+import { TRootReducer } from "../store/rootReducer";
+import { hideLoader, showAlert, showLoader } from "../store/appReducer/appAction";
 
 export function useBestArticles() {
-  const token = useContext(tokenContext);
+  const token = useSelector<TRootReducer, string | undefined> (state => state.app.token);
+  const dispatch = useDispatch();
   const [cardList, setList] = useState<ICard[]>([]);
 
   useEffect(() => {
-    if (token.length > 10) {
+    if (token) {      
+      console.log(token);
+      dispatch({type: "go_best"})
+      dispatch(showLoader());
       axios
         .get("https://oauth.reddit.com/best", {
           headers: { Authorization: `bearer ${token}` },
         })
         .then((resp) => {
           const collection = resp.data.data.children;
-          // console.log(collection);
           console.log(resp);
           const bestArticles = createCollection(collection, "data");
           setList(bestArticles);
+          dispatch(hideLoader());
         })
-        .catch(console.log);
-    } else {
-      console.log("no token");
-    }
+        .catch((er) => {
+          dispatch(showAlert(`Что-то пошло не так при загрузке статей. Пожалуйста, попробуйте попытку позднее. ${er}`));
+          dispatch(hideLoader());
+        });
+    };
   }, [token]);
 
   return [cardList];

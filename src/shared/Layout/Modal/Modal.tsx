@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { userContext } from "../../context/userContext";
+import React from "react";
 import { CardPreview } from "../Content/Card/CardPreview";
 import { ICard } from "../Content/CardsList";
 import { CommentForm } from "./CommentForm";
@@ -18,7 +17,6 @@ interface IModal {
 }
 
 export function Modal({ content, hideFn, modalOpen }: IModal) {
-  const { loading, iconImg, name, messageCount } = useContext(userContext);
 
   const node = document.querySelector("#modal_root"); //type guard
   if (!node) return null;
@@ -28,7 +26,7 @@ export function Modal({ content, hideFn, modalOpen }: IModal) {
   return ReactDOM.createPortal(
     <div className={styles.modal}>
       <div className={styles.modal__container} ref={ref}>
-        <ModalHeaderBar content={content} modalOpen={modalOpen} />
+        <ModalHeaderBar content={content} modalOpen={modalOpen} />       
 
         <ModalArticle>
           <CardPreview preview={content} />

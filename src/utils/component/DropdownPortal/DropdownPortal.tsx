@@ -34,8 +34,12 @@ export function DropdownPortal({
       setIsDropdownOpen(!isDropdownOpen);
     }
   };
+  let insertNode;
 
-  const insertNode = document.querySelector(`#${nodeId}`);
+  if (typeof document !== "undefined") {
+    insertNode = window.document.querySelector(`#${nodeId}`);
+  }
+  
   if (!insertNode) return null;
 
   return ReactDOM.createPortal(

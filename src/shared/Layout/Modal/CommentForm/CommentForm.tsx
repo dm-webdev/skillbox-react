@@ -1,6 +1,7 @@
-import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext } from "react";
+import { useSelector } from "react-redux";
+import { TRootReducer } from "../../../../store/rootReducer";
 import { commentContext } from "../../../context/commentContext";
-import { userContext } from "../../../context/userContext";
 import { ICard } from "../../Content/CardsList";
 import styles from "./commentform.css";
 import { CommentFormControls } from "./CommentFormControls";
@@ -11,7 +12,7 @@ interface ICommentForm {
 }
 
 export function CommentForm({ content }: ICommentForm) {
-  const { loading, iconImg, name, messageCount } = useContext(userContext);
+  const name = useSelector<TRootReducer, string | undefined>(state => state.user.name);
 
   const { value, onChange } = useContext(commentContext);
 

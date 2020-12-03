@@ -1,17 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styles from './threadtitle.css';
-import { tokenContext } from "../../../context/tokenContext";
+import { useSelector } from 'react-redux';
+import { TRootReducer } from '../../../../store/rootReducer';
 
 export function ThreadTitle() {
-  const token = useContext(tokenContext);
-  const [showHeader, setHeader] = useState(false);
-
-  useEffect(() => {
-    if (token.length > 10) {     
-      setHeader(true);
-  }}, [token]);
+  const token = useSelector<TRootReducer, string | undefined> (state => state.app.token);
 
   return (
-    <h2 className={styles.threadTitle}>{showHeader ? "Личный кабинет" : "Пожалуйста зарегистрируйтесь"}</h2>
+    <h2 className={styles.threadTitle}>{token ? "Личный кабинет" : "Пожалуйста зарегистрируйтесь"}</h2>
   );
 }

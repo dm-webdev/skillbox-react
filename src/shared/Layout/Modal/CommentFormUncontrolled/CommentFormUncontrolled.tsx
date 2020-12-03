@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useContext, useEffect, useRef } from "react";
-import { userContext } from "../../../context/userContext";
+import { useSelector } from "react-redux";
+import { TRootReducer } from "../../../../store/rootReducer";
 import { CommentFormControls } from "../CommentForm/CommentFormControls";
 import { ControlsBtnGroup } from "../CommentForm/ControlsBtnGroup";
 import styles from "./commentformuncontrolled.css";
@@ -9,7 +10,7 @@ interface ICommentFormUncontrolled {
 }
 
 export function CommentFormUncontrolled({ id }: ICommentFormUncontrolled) {
-  const { loading, iconImg, name, messageCount } = useContext(userContext);
+  const name = useSelector<TRootReducer, string | undefined>(state => state.user.name);
 
   const ref = useRef<HTMLTextAreaElement>(null);
 

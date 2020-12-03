@@ -9,25 +9,31 @@ import { Layout } from "./shared/Layout";
 import { Content } from "./shared/Layout/Content";
 import { CardsList } from "./shared/Layout/Content/CardsList";
 import { Header } from "./shared/Layout/Header";
-import { useToken } from "./hooks/useToken";
-import { tokenContext } from "./shared/context/tokenContext";
-import { UserContextProvider } from "./shared/context/userContext";
 import { BestArticleContextProvider } from "./shared/context/bestArticleContext";
 import { commentContext } from "./shared/context/commentContext";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { applyMiddleware, createStore } from "redux";
+import { rootReducer } from "./store/rootReducer";
+import thunk from "redux-thunk";
+
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 function AppComponent() {
   const [commentValue, setCommentValue] = useState("");
-  const [token] = useToken();
-
   const CommentProvider = commentContext.Provider;
 
   return (
-    <CommentProvider value={{
-      value: commentValue,
-      onChange: setCommentValue,
-    }}>
-      <tokenContext.Provider value={token}>
-      <UserContextProvider>
+    <Provider store={store}>
+      <CommentProvider
+        value={{
+          value: commentValue,
+          onChange: setCommentValue,
+        }}
+      >
         <Layout>
           <Header />
           <Content>
@@ -36,9 +42,8 @@ function AppComponent() {
             </BestArticleContextProvider>
           </Content>
         </Layout>
-      </UserContextProvider>
-      </tokenContext.Provider>
-    </CommentProvider>    
+      </CommentProvider>
+    </Provider>
   );
 }
 
