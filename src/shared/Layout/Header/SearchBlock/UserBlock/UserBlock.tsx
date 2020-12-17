@@ -5,7 +5,7 @@ import { Ecolors, Text } from "../../../../../utils/component/Text";
 import { useDispatch, useSelector } from "react-redux";
 import { TRootReducer } from "../../../../../store/rootReducer";
 import { clearUserData, setUserData } from "../../../../../store/userReducer/userAction";
-import { clearToken } from "../../../../../store/appReducer/appAction";
+import { clearToken, saveToken } from "../../../../../store/appReducer/appAction";
 
 export function UserBlock() {
   const token = useSelector<TRootReducer, string | undefined>(state => state.app.token);
@@ -13,9 +13,13 @@ export function UserBlock() {
   const userImg = useSelector<TRootReducer, string | undefined>(state => state.user.iconImg);
   const dispatch = useDispatch();
 
+  useEffect (() => {
+    dispatch(saveToken());
+  });
+
   useEffect(()=>{
     if (token) {
-      dispatch(setUserData());
+      dispatch(setUserData());      
     };
   }, [token, dispatch]);
 

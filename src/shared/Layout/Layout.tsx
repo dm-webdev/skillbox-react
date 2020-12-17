@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useTokenRedux } from "../../hooks/useTokenRedux";
 import { TRootReducer } from '../../store/rootReducer';
 import { Alert } from './Common/Allert';
 import { Loader } from './Common/Loader';
@@ -11,7 +10,7 @@ interface ILayoutProps {
 }
 
 export function Layout({ children }: ILayoutProps) {
-  useTokenRedux();
+
   const isLoading = useSelector<TRootReducer, boolean>(state => state.app.isLoading);
   const isAlert = useSelector<TRootReducer, boolean>(state => state.app.isAlert);
   

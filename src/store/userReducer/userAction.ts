@@ -38,6 +38,7 @@ export const setUserData = (): ThunkAction<
     });
 };
 
+
 export function clearUserData() {
   return {
     type: CLEAR_USERDATA,
