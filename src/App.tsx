@@ -16,6 +16,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { applyMiddleware, createStore } from "redux";
 import { rootReducer } from "./store/rootReducer";
 import thunk from "redux-thunk";
+import { FormHook } from "./lernMapp/FormHook";
 
 export const store = createStore(
   rootReducer,
@@ -37,6 +38,7 @@ function AppComponent() {
         <Layout>
           <Header />
           <Content>
+            <FormHook />
             <BestArticleContextProvider>
               <CardsList />
             </BestArticleContextProvider>

@@ -28,7 +28,7 @@ export function useBestArticles() {
           dispatch(hideLoader());
         })
         .catch((er) => {
-          dispatch(showAlert(`Что-то пошло не так при загрузке статей. Пожалуйста, попробуйте попытку позднее. ${er}`));
+          dispatch(showAlert(`Что-то пошло не так при загрузке статей. Пожалуйста, попробуйте попытку позднее. ${er}`, "allert"));
           dispatch(hideLoader());
         });
     };

@@ -35,10 +35,11 @@ export function hideLoader() {
   };
 }
 
-export function showAlert(text: string) {
+export function showAlert(text: string, allert_name: string) {
   return {
     type: SHOW_ALERT,
     text: text,
+    allert_type: allert_name,
   };
 }
 

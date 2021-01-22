@@ -1,5 +1,6 @@
-import React, { ChangeEvent, FormEvent, useContext } from "react";
-import { useSelector } from "react-redux";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { showAlert } from "../../../../store/appReducer/appAction";
 import { TRootReducer } from "../../../../store/rootReducer";
 import { commentContext } from "../../../context/commentContext";
 import { ICard } from "../../Content/CardsList";
@@ -12,11 +13,14 @@ interface ICommentForm {
 }
 
 export function CommentForm({ content }: ICommentForm) {
-  const name = useSelector<TRootReducer, string | undefined>(state => state.user.name);
-
+  const name = useSelector<TRootReducer, string | undefined>(
+    (state) => state.user.name
+  );
+  // const ref = useRef<HTMLDivElement>(null);
   const { value, onChange } = useContext(commentContext);
-
-  // const [value, setValue] = useState("");
+  const [touched, setTouched] = useState(false);
+  const [valueError, setValueError] = useState("");
+  const dispatch = useDispatch();
 
   function handleChange(ev: ChangeEvent<HTMLTextAreaElement>) {
     ev.preventDefault();
@@ -25,8 +29,19 @@ export function CommentForm({ content }: ICommentForm) {
 
   function handleSubmit(ev: FormEvent) {
     ev.preventDefault();
+    setTouched(true);
+    setValueError(validateValue());
+    const isFormValid = !validateValue();
+    if (!isFormValid) return;
+
     console.log(value);
     onChange("");
+    dispatch(showAlert("Форма отправлена", "info"));
+  }
+
+  function validateValue() {
+    if (value.length <= 5) return "Введите более пяти символов!";
+    return "";
   }
 
   return (
@@ -35,27 +50,28 @@ export function CommentForm({ content }: ICommentForm) {
       name="CommentForm"
       onSubmit={handleSubmit}
     >
-      <textarea
-        className={styles.commentForm__text}
-        name="commentText"
-        rows={4}
-        placeholder={
-          name == undefined
-            ? "Чтобы оставить отзыв, пожалуйста зарегистрируйтесь"
-            : `${name} , оставьте ваш комментарий`
-        }
-        value={value}
-        onChange={handleChange}
-      />
+      <label>
+        <textarea
+          className={styles.commentForm__text}
+          name="commentText"
+          rows={4}
+          placeholder={
+            name == undefined
+              ? "Чтобы оставить отзыв, пожалуйста зарегистрируйтесь"
+              : `${name} , оставьте ваш комментарий`
+          }
+          value={value}
+          onChange={handleChange}
+          aria-invalid={valueError ? "true" : undefined}
+        />
+
+        {touched && valueError && <div>{valueError}</div>}
+      </label>
 
       <CommentFormControls>
         <ControlsBtnGroup id={content.id} />
 
-        <button
-          className={styles.commentForm__btn}
-          type="submit"
-          disabled={name == undefined ? true : false}
-        >
+        <button className={styles.commentForm__btn} type="submit">
           Комментировать
         </button>
       </CommentFormControls>

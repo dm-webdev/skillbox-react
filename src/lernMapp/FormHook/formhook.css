@@ -1,0 +1,78 @@
+.testForm {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  min-height: 200px;
+  padding: 16px 18px;
+  border: 1px solid var(--grey_66);
+  border-radius: 10px;
+  background-color: var(--grey_66);
+}
+
+.testFormLabel {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-bottom: 40px;
+  background-color: var(--grey_E5);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.testFormEmail {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-bottom: 40px;
+  background-color: var(--grey_E5);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.testFormText {
+  font-size: 18px;
+  padding: 16px;
+  border: 1px solid var(--grey_D9);
+  border-radius: 3px;
+  resize: none;
+}
+
+.testFormBtn {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--green);
+  color: var(--orange);
+  transition: color .2s, background-color .2s;
+}
+
+.testFormBtn:active,
+.testFormBtn:hover,
+.testFormBtn:focus {
+  background-color: var(--orange);
+  color: var(--green);
+}
+
+.testFormBtn:disabled,
+.testFormBtn:disabled:active,
+.testFormBtn:disabled:hover,
+.testFormBtn:disabled:focus {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.testFormAllert {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 20px;
+  font-weight: 600;
+  color: var(--orange);
+}
