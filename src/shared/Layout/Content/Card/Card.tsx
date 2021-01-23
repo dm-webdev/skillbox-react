@@ -1,6 +1,6 @@
 import React, {useState} from "react";
+import { ICard } from "../../../../store/contentReducer/contentReducer";
 import { Modal } from "../../Modal";
-import { ICard } from "../CardsList";
 import styles from "./card.css";
 import { CardContent } from "./CardContent";
 import { CardControls } from "./CardControls";

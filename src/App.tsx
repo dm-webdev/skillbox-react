@@ -9,14 +9,12 @@ import { Layout } from "./shared/Layout";
 import { Content } from "./shared/Layout/Content";
 import { CardsList } from "./shared/Layout/Content/CardsList";
 import { Header } from "./shared/Layout/Header";
-import { BestArticleContextProvider } from "./shared/context/bestArticleContext";
 import { commentContext } from "./shared/context/commentContext";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { applyMiddleware, createStore } from "redux";
 import { rootReducer } from "./store/rootReducer";
 import thunk from "redux-thunk";
-import { FormHook } from "./lernMapp/FormHook";
 
 export const store = createStore(
   rootReducer,
@@ -38,10 +36,7 @@ function AppComponent() {
         <Layout>
           <Header />
           <Content>
-            <FormHook />
-            <BestArticleContextProvider>
-              <CardsList />
-            </BestArticleContextProvider>
+            <CardsList />
           </Content>
         </Layout>
       </CommentProvider>

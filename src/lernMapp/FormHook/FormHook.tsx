@@ -74,7 +74,7 @@ export function FormHook() {
               {errors.text_of_message &&
               touched.text_of_message &&
               errors.text_of_message ? (
-                <div className={styles.testFormAllert}>
+                <div className={styles.testFormalert}>
                   {errors.text_of_message}
                 </div>
               ) : null}
@@ -91,7 +91,7 @@ export function FormHook() {
                 placeholder={"Введите ваш E-mail"}
               />
               {errors.email && touched.email && errors.email ? (
-                <div className={styles.testFormAllert}>{errors.email}</div>
+                <div className={styles.testFormalert}>{errors.email}</div>
               ) : null}
             </label>
 

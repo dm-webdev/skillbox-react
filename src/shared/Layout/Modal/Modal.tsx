@@ -1,6 +1,5 @@
 import React from "react";
 import { CardPreview } from "../Content/Card/CardPreview";
-import { ICard } from "../Content/CardsList";
 import { CommentForm } from "./CommentForm";
 import { CommentList } from "./CommentList";
 import styles from "./modal.css";
@@ -9,6 +8,7 @@ import { ModalControls } from "./ModalControls";
 import { ModalHeaderBar } from "./ModalHeaderBar";
 import ReactDOM from "react-dom";
 import { useModalOpen } from "../../../hooks/useModalOpen";
+import { ICard } from "../../../store/contentReducer/contentReducer";
 
 interface IModal {
   content: ICard;

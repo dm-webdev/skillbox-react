@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./modalheaderbar.css";
-import { ICard } from "../../Content/CardsList";
 import { EIcons, Icon } from "../../../../utils/component/Icon";
 import { CardContent } from "../../Content/Card/CardContent";
 import { KarmaCount } from "../../Content/Card/CardControls/KarmaCount";
+import { ICard } from "../../../../store/contentReducer/contentReducer";
 
 interface IModalHeaderBar {
   content: ICard;

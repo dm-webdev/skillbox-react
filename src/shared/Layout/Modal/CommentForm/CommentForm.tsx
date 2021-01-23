@@ -1,9 +1,9 @@
 import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { showAlert } from "../../../../store/appReducer/appAction";
+import { ICard } from "../../../../store/contentReducer/contentReducer";
 import { TRootReducer } from "../../../../store/rootReducer";
 import { commentContext } from "../../../context/commentContext";
-import { ICard } from "../../Content/CardsList";
 import styles from "./commentform.css";
 import { CommentFormControls } from "./CommentFormControls";
 import { ControlsBtnGroup } from "./ControlsBtnGroup";

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICard } from '../../Content/CardsList';
+import { ICard } from '../../../../store/contentReducer/contentReducer';
 import { CommentCard } from './CommentCard';
 import styles from './commentlist.css';
 import { CommentSelect } from './CommentSelect';

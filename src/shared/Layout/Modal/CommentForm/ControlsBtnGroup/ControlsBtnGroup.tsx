@@ -1,6 +1,5 @@
 import React from "react";
 import { GenericMenuList } from "../../../../../utils/component/GenericMenuList/GenericMenuList";
-import { ICard } from "../../../Content/CardsList";
 import styles from "./controlsbtngroup.css";
 import { controlsBtnGroupList } from "./controlsBtnGroupList";
 

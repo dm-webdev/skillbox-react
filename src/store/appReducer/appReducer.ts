@@ -13,14 +13,14 @@ export type TAppReducer = {
   isLoading: boolean;
   isAlert: boolean;
   alertText: string;
-  allertType: string;
+  alertType: string;
 };
 
 const initialState: TAppReducer = {
   isLoading: false,
   isAlert: false,
   alertText: "",
-  allertType: "",
+  alertType: "",
 };
 
 export const appReducer: Reducer<TAppReducer> = (
@@ -53,14 +53,14 @@ export const appReducer: Reducer<TAppReducer> = (
         ...state,
         isAlert: true,
         alertText: action.text,
-        allertType: action.allert_type,
+        alertType: action.alert_type,
       };
     case HIDE_ALERT:
       return {
         ...state,
         isAlert: false,
         alertText: "",
-        allertType: "",
+        alertType: "",
     };
     default:
       return state;
