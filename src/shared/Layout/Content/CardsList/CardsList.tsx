@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { getArticles } from "../../../../store/contentReducer/contentAction";
 import { ICard } from "../../../../store/contentReducer/contentReducer";
 import { TRootReducer } from "../../../../store/rootReducer";
@@ -17,13 +18,13 @@ export function CardsList() {
   const loadingCount = useSelector<TRootReducer, number>(
     (state) => state.content.loading_count
   );
+  const history = useHistory();
 
   const dispatch = useDispatch();
   const bottomMarker = useRef<HTMLDivElement>(null);
   const bottomOfList = bottomMarker.current;
 
   const [list, setList] = useState(article_list);
-
   useEffect(() => {
     dispatch({ type: "setList" });
     setList(article_list);
@@ -49,6 +50,10 @@ export function CardsList() {
       }
     );
 
+    if (loadingCount === 1) {
+      dispatch(getArticles());
+    }
+
     if (bottomOfList && bottomOfList !== null && loadingCount % 3 !== 0) {
       observer.observe(bottomOfList);
     }
@@ -58,7 +63,7 @@ export function CardsList() {
         observer.unobserve(bottomOfList);
       }
     };
-  }, [bottomOfList, loadingCount]);
+  }, [bottomOfList, loadingCount, article_list, token, history]);
 
   const handleItemClick = (id: string) => {
     setList(list.filter((item) => item.id !== id));
@@ -66,9 +71,12 @@ export function CardsList() {
 
   return (
     <ul className={styles.cardsList}>
+      {token ? null : history.push("/home")}
+
       {list.length === 0 && (
         <div className={styles.alert__text}>Нет ни одного поста</div>
       )}
+
       {list.map((item: ICard) => (
         <Card
           key={item.id}
@@ -76,6 +84,7 @@ export function CardsList() {
           hideFn={() => handleItemClick(item.id)}
         ></Card>
       ))}
+
       {loadingCount % 3 === 0 ? (
         <button
           className={styles.loading__btn}

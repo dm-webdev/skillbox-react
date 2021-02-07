@@ -9,14 +9,14 @@ export function useModalOpen() {
   useEffect(() => {
     function handleClick(ev: MouseEvent) {
       if (ev.target instanceof Node && !ref.current?.contains(ev.target)) {
-        history.push("/");
+        history.push("/posts");
       }
     }
     document.addEventListener("click", handleClick);
 
     function handleDownKey(ev: KeyboardEvent) {
       if (ev.key == "Escape") {
-        history.push("/");
+        history.push("/posts");
       }
     }
 

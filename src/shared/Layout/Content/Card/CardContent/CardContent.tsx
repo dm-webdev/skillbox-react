@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./cardcontent.css";
 import { CreatedAt } from "./CreatedAt";
 import classNames from "classNames";
@@ -44,7 +44,7 @@ export function CardContent({ content, name, comment, modalOpen }: IContent) {
 
       <h2 className={styles.title}>
         <Link
-          to='/posts/1'
+          to={`/posts/${content?.id}`}
           className={styles.postLink}
         >
           {content

@@ -17,6 +17,8 @@ import { rootReducer } from "./store/rootReducer";
 import thunk from "redux-thunk";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Modal } from "./shared/Layout/Modal";
+import { Home } from "./shared/Layout/pages/Home";
+import { Page404 } from "./shared/Layout/pages/page404";
 
 export const store = createStore(
   rootReducer,
@@ -46,20 +48,20 @@ function AppComponent() {
               <Header />
               <Content>
                 <Switch>
-                  <Redirect exact from="/" to="/posts" />
+                  <Redirect exact from="/" to="/home" /> 
 
                   <Redirect from="/auth" to="/posts" />
+
+                  <Route path="/home">
+                    <Home />
+                  </Route>
 
                   <Route path="/posts">
                     <CardsList />
                   </Route>
 
-                  <Route path="/posts/:id">
-                    <div>Hello world</div>
-                  </Route>
-
                   <Route path="*">
-                    <h1>404 - страница не найдена</h1>
+                    <Page404 />
                   </Route>
                 </Switch> 
               </Content>
