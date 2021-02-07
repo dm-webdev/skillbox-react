@@ -30,7 +30,8 @@ export function Card(card: ICardItem) {
 
       <CardControls id={card.item.id} hideFn={card.hideFn} score={card.item.score}/>
 
-      {isModalOpened && <Modal content={card.item} hideFn={card.hideFn} modalOpen={ modalOpen } />}
+      {/* <Modal content={card.item} hideFn={card.hideFn} modalOpen={ modalOpen } /> */}
+      {/* {isModalOpened && <Modal content={card.item} hideFn={card.hideFn} modalOpen={ modalOpen } />} */}
     </li>
   );
 }

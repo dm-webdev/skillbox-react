@@ -4,6 +4,7 @@ import { CreatedAt } from "./CreatedAt";
 import classNames from "classNames";
 import { ICommentCard } from "../../../Modal/CommentList/CommentCard/CommentCard";
 import { ICard } from "../../../../../store/contentReducer/contentReducer";
+import { Link } from "react-router-dom";
 
 interface IContent {
   content: ICard | undefined;
@@ -42,17 +43,16 @@ export function CardContent({ content, name, comment, modalOpen }: IContent) {
       </div>
 
       <h2 className={styles.title}>
-        <button
-          type="button"
+        <Link
+          to='/posts/1'
           className={styles.postLink}
-          onClick={() => modalOpen?.()}
         >
           {content
             ? content.title.length > 70
               ? `${content.title.slice(0, 70)} ...`
               : content?.title
             : undefined}
-        </button>
+        </Link>
       </h2>
     </section>
   );

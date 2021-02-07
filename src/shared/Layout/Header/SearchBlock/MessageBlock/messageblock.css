@@ -32,5 +32,6 @@
 @media all and (min-width: 1024px) {
   .message {
     order: 1;
+    margin-right: 30px;
   }
 }

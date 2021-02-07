@@ -21,7 +21,7 @@ export function Modal({ content, hideFn, modalOpen }: IModal) {
   const node = document.querySelector("#modal_root"); //type guard
   if (!node) return null;
 
-  const [ref] = useModalOpen(modalOpen);
+  const [ref] = useModalOpen();
 
   return ReactDOM.createPortal(
     <div className={styles.modal}>

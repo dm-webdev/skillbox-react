@@ -7,6 +7,6 @@ export function ThreadTitle() {
   const token = useSelector<TRootReducer, string | undefined> (state => state.app.token);
 
   return (
-    <h2 className={styles.threadTitle}>{token ? "Личный кабинет" : "Пожалуйста зарегистрируйтесь"}</h2>
+    <h2 className={styles.threadTitle}>{token ? "Приятного просмотра" : "Пожалуйста зарегистрируйтесь"}</h2>
   );
 }
