@@ -4,10 +4,10 @@ import { RemoveButton } from '../../Content/Card/CardControls/RemoveButton';
 import { ShareButton } from '../../Content/Card/CardControls/ShareButton';
 import { SaveButtonModal } from './SaveButtonModal/SaveButtonModal';
 
-import { ICard } from '../../Content/CardsList';
 import styles from './modalcontrols.css';
 import { ComplainButtonModal } from './ComplainButtonModal';
 import { VoteCountModal } from './VoteCountModal';
+import { ICard } from '../../../../store/contentReducer/contentReducer';
 
 interface IModalContent {
   content: ICard;

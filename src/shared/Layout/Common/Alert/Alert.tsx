@@ -11,12 +11,12 @@ export function Alert() {
     (state) => state.app.alertText
   );
 
-  const allert_type = useSelector<TRootReducer, string | undefined>(
-    (state) => state.app.allertType
+  const alert_type = useSelector<TRootReducer, string | undefined>(
+    (state) => state.app.alertType
   );
 
   const handleClick = () => {
-    if (allert_type === "allert") {
+    if (alert_type === "alert") {
       dispatch(hideAlert());
       dispatch(clearUserData());
       localStorage.removeItem("tokenReddit");
@@ -25,14 +25,14 @@ export function Alert() {
     }
   };
 
-  if (allert_type === "info") {
+  if (alert_type === "info") {
     setTimeout(() => dispatch(hideAlert()), 2000);
   }
 
   return (
     <div className={styles.alert}>
       <p className={styles.alert__desc}>{text}</p>
-      {allert_type === "allert" ? (
+      {alert_type === "alert" ? (
         <button className={styles.btn} onClick={handleClick}>
           скрыть
         </button>

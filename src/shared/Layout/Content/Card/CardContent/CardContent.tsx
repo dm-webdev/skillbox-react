@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ICard } from "../../CardsList";
 import styles from "./cardcontent.css";
 import { CreatedAt } from "./CreatedAt";
 import classNames from "classNames";
 import { ICommentCard } from "../../../Modal/CommentList/CommentCard/CommentCard";
+import { ICard } from "../../../../../store/contentReducer/contentReducer";
 
 interface IContent {
   content: ICard | undefined;
@@ -11,10 +11,6 @@ interface IContent {
   name: "rubric" | "rubricModal" | "rubricComment";
   modalOpen?: () => void;
 }
-
-// interface IContentComment {
-//   comment: ICommentCard;
-// }
 
 export function CardContent({ content, name, comment, modalOpen }: IContent) {
   const classes = classNames(styles[name]);

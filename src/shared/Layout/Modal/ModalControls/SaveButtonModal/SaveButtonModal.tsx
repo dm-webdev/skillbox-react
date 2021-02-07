@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './savebuttonmodal.css';
 import { Icon, EIcons } from '../../../../../utils/component/Icon';
-import { ICard } from '../../../Content/CardsList';
-
+import { ICard } from '../../../../../store/contentReducer/contentReducer';
 
 interface ISaveButtonModal {
   content: ICard;

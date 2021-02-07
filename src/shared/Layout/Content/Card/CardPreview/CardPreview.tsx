@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICard } from '../../CardsList';
+import { ICard } from '../../../../../store/contentReducer/contentReducer';
 import styles from './cardpreview.css';
 
 interface IPreview {

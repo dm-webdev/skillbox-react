@@ -1,3 +1,37 @@
+.alert__text {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.loading__btn {
+  display: block;
+  margin: 30px auto 0 auto;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--green);
+  color: var(--orange);
+  transition: color .2s, background-color .2s;
+}
+
+.loading__btn:active,
+.loading__btn:hover,
+.loading__btn:focus {
+  background-color: var(--orange);
+  color: var(--green);
+}
+
+.loading__btn:disabled,
+.loading__btn:disabled:active,
+.loading__btn:disabled:hover,
+.loading__btn:disabled:focus {
+  cursor: default;
+  opacity: 0.5;
+}
+
+
 @media all and (min-width: 1024px) {
   .cardsList {
     padding: 20px;

@@ -31,7 +31,7 @@ export const setUserData = (): ThunkAction<
     .catch((er) => {
       dispatch(
         showAlert(
-          `Во время загрузки данных произошла ошибка. Пожалуйста, попробуйте позднее. ${er}`, "allert"
+          `Во время загрузки данных произошла ошибка. Пожалуйста, попробуйте позднее. ${er}`, "alert"
         )
       );
       dispatch(hideLoader());
