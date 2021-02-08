@@ -1,15 +1,25 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 15px auto;
+  padding: 30px 15px;
+  background-color: var(--white);
+}
+
 .alert__text {
-  text-align: center;
-  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .loading__btn {
+  align-self: center;
   display: block;
   margin: 30px auto 0 auto;
   padding: 15px;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 0.8rem;
   font-weight: 600;
+  text-align: center;
   text-transform: uppercase;
   background-color: var(--green);
   color: var(--orange);
@@ -32,13 +42,15 @@
 }
 
 @media all and (min-width: 1024px) {
-  .cardsList {
-    padding: 20px;
+  .container {
+    margin: 25px auto;
+    padding: 30px 30px;
   }
 }
 
 @media all and (min-width: 1540px) {
-  .cardsList {
-    padding: 40px;
+  .container {
+    margin: 35px auto;
+    padding: 30px 45px;
   }
 }

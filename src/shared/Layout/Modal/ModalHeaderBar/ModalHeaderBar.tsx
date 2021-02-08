@@ -4,13 +4,19 @@ import { EIcons, Icon } from "../../../../utils/component/Icon";
 import { CardContent } from "../../Content/Card/CardContent";
 import { KarmaCount } from "../../Content/Card/CardControls/KarmaCount";
 import { ICard } from "../../../../store/contentReducer/contentReducer";
+import { useHistory } from "react-router-dom";
 
 interface IModalHeaderBar {
   content: ICard;
-  modalOpen?: ()=>void;
 }
 
-export function ModalHeaderBar({ content, modalOpen }: IModalHeaderBar) {
+export function ModalHeaderBar({ content }: IModalHeaderBar) {
+  const history = useHistory();
+
+  const handleModalClose = () => {
+    history.push("/posts")
+  }
+
   return (
     <div className={styles.modal__headerBar}>
       <KarmaCount
@@ -25,7 +31,7 @@ export function ModalHeaderBar({ content, modalOpen }: IModalHeaderBar) {
         type="button"
         className={styles.hideBtn}
         aria-label="Закрыть статью"
-        onClick={()=>modalOpen?.()}
+        onClick={handleModalClose}
       >
         <Icon name={EIcons.iconHideBtn} size={20} />
       </button>

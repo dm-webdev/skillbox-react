@@ -13,20 +13,18 @@ import { ICard } from "../../../store/contentReducer/contentReducer";
 interface IModal {
   content: ICard;
   hideFn?: () => void;
-  modalOpen?: () => void;
 }
 
-export function Modal({ content, hideFn, modalOpen }: IModal) {
-
+export function Modal({ content, hideFn }: IModal) {
   const node = document.querySelector("#modal_root"); //type guard
   if (!node) return null;
 
-  const [ref] = useModalOpen(modalOpen);
+  const [ref] = useModalOpen();
 
   return ReactDOM.createPortal(
     <div className={styles.modal}>
       <div className={styles.modal__container} ref={ref}>
-        <ModalHeaderBar content={content} modalOpen={modalOpen} />       
+        <ModalHeaderBar content={content} />       
 
         <ModalArticle>
           <CardPreview preview={content} />
