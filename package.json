@@ -84,10 +84,8 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.11.0",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-node-externals": "^2.5.2"
-  },
-  "proxy": "http://localhost:9000",
-  "devDependencies": {
+    "webpack-node-externals": "^2.5.2",
     "redux-devtools-extension": "^2.13.8"
-  }
+  },
+  "proxy": "http://localhost:9000"
 }

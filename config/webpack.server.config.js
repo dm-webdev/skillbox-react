@@ -6,7 +6,6 @@ const NODE_ENV = process.env.NODE_ENV;
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
 const IS_DEV = NODE_ENV == "development";
 
-
 module.exports = {
   resolve: {
     extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
@@ -30,23 +29,30 @@ module.exports = {
   },
 
   plugins: IS_DEV
-  ? [
-      new CleanWebpackPlugin(),
-      new DefinePlugin({
-        "process.env.IS_DEV": JSON.stringify('development'),
-        "process.env.CLIENT_ID": JSON.stringify('tEnmcP62ZX80rQ'),
-        "process.env.URI": JSON.stringify('http://localhost:9000'),
-        "process.env.SECRET": JSON.stringify('WdtP8Xgim-btpjaKsgi7smwRdawUHQ'),
-      }),
-    ]
-  : [
-      new CleanWebpackPlugin(),
-      new DefinePlugin({
-        "process.env.CLIENT_ID": JSON.stringify('BSNjBV-kKsm3bA'),
-        "process.env.URI": JSON.stringify('https://skillbox-reddit.herokuapp.com'),
-        "process.env.SECRET": JSON.stringify('Jd3n_CIKmzYxmSwTqmioMdLpH9bpiw'),
-      }),
-    ],
+    ? [
+        new CleanWebpackPlugin(),
+        new DefinePlugin({
+          "process.env.IS_DEV": JSON.stringify("development"),
+          "process.env.CLIENT_ID": JSON.stringify("tEnmcP62ZX80rQ"),
+          "process.env.URI": JSON.stringify("http://localhost:9000"),
+          "process.env.SECRET": JSON.stringify(
+            "WdtP8Xgim-btpjaKsgi7smwRdawUHQ"
+          ),
+        }),
+      ]
+    : [
+        new CleanWebpackPlugin(),
+        new DefinePlugin({
+          __REACT_DEVTOOLS_GLOBAL_HOOK__: "({ isDisabled: true })",
+          "process.env.CLIENT_ID": JSON.stringify("BSNjBV-kKsm3bA"),
+          "process.env.URI": JSON.stringify(
+            "https://skillbox-reddit.herokuapp.com"
+          ),
+          "process.env.SECRET": JSON.stringify(
+            "Jd3n_CIKmzYxmSwTqmioMdLpH9bpiw"
+          ),
+        }),
+      ],
 
   module: {
     rules: [

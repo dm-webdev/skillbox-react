@@ -17,11 +17,11 @@ import { Home } from "./shared/Layout/pages/Home";
 import { Page404 } from "./shared/Layout/pages/page404";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-const devTools = 
-  process.env.IS_DEV == "development" ? 
-    composeWithDevTools(applyMiddleware(thunk)) :
-    applyMiddleware(thunk);
-    
+const devTools =
+  process.env.IS_DEV === "development"
+    ? composeWithDevTools(applyMiddleware(thunk))
+    : applyMiddleware(thunk);
+
 export const store = createStore(rootReducer, devTools);
 
 function AppComponent() {
@@ -47,7 +47,7 @@ function AppComponent() {
               <Header />
               <Content>
                 <Switch>
-                  <Redirect exact from="/" to="/home" /> 
+                  <Redirect exact from="/" to="/home" />
 
                   <Redirect from="/auth" to="/posts" />
 
@@ -62,7 +62,7 @@ function AppComponent() {
                   <Route path="*">
                     <Page404 />
                   </Route>
-                </Switch> 
+                </Switch>
               </Content>
             </Layout>
           </CommentProvider>

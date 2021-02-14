@@ -5,20 +5,16 @@ const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == "development";
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
 
-
 function getEntry() {
   if (IS_DEV) {
     return [
       path.resolve(__dirname, "../src/client/index.jsx"),
       "webpack-hot-middleware/client?path=http://localhost:9001/static/__webpack_hmr",
-    ]
+    ];
   }
 
-  return [
-    path.resolve(__dirname, "../src/client/index.jsx"),
-  ]
+  return [path.resolve(__dirname, "../src/client/index.jsx")];
 }
-
 
 module.exports = {
   resolve: {
@@ -45,18 +41,25 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HotModuleReplacementPlugin(),
         new DefinePlugin({
-          "process.env.IS_DEV": JSON.stringify('development'),
-          "process.env.CLIENT_ID": JSON.stringify('tEnmcP62ZX80rQ'),
-          "process.env.URI": JSON.stringify('http://localhost:9000'),
-          "process.env.SECRET": JSON.stringify('WdtP8Xgim-btpjaKsgi7smwRdawUHQ'),
+          "process.env.IS_DEV": JSON.stringify("development"),
+          "process.env.CLIENT_ID": JSON.stringify("tEnmcP62ZX80rQ"),
+          "process.env.URI": JSON.stringify("http://localhost:9000"),
+          "process.env.SECRET": JSON.stringify(
+            "WdtP8Xgim-btpjaKsgi7smwRdawUHQ"
+          ),
         }),
       ]
     : [
         new CleanWebpackPlugin(),
-        new DefinePlugin({          
-          "process.env.CLIENT_ID": JSON.stringify('BSNjBV-kKsm3bA'),
-          "process.env.URI": JSON.stringify('https://skillbox-reddit.herokuapp.com'),
-          "process.env.SECRET": JSON.stringify('Jd3n_CIKmzYxmSwTqmioMdLpH9bpiw'),
+        new DefinePlugin({
+          __REACT_DEVTOOLS_GLOBAL_HOOK__: "({ isDisabled: true })",
+          "process.env.CLIENT_ID": JSON.stringify("BSNjBV-kKsm3bA"),
+          "process.env.URI": JSON.stringify(
+            "https://skillbox-reddit.herokuapp.com"
+          ),
+          "process.env.SECRET": JSON.stringify(
+            "Jd3n_CIKmzYxmSwTqmioMdLpH9bpiw"
+          ),
         }),
       ],
 
