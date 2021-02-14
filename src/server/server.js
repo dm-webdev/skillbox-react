@@ -4,7 +4,6 @@ import { App } from "../App";
 import { indexTemplate } from "./indexTemplate";
 import axios from "axios";
 
-
 const PORT = process.env.PORT || 9000;
 const app = express();
 
@@ -20,17 +19,18 @@ app.get("/auth", (req, res) => {
           username: process.env.CLIENT_ID,
           password: process.env.SECRET,
         },
-        headers: { "Content-type": "application/x-www-form-urlencoded", },
+        headers: { "Content-type": "application/x-www-form-urlencoded" },
       }
     )
 
     .then(({ data }) => {
       res.send(
-        indexTemplate(ReactDOM.renderToString(App()), data["access_token"]))
+        indexTemplate(ReactDOM.renderToString(App()), data["access_token"])
+      );
     })
 
-    .catch(console.log)
-})
+    .catch(console.log);
+});
 
 app.get("*", (req, res) => {
   res.send(indexTemplate(ReactDOM.renderToString(App())));

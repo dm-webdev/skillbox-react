@@ -4,15 +4,14 @@ const { HotModuleReplacementPlugin, DefinePlugin } = require("webpack");
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == "development";
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
-const CLIENT_ID = IS_DEV ? 'tEnmcP62ZX80rQ' : 'BSNjBV-kKsm3bA';
-const URI = IS_DEV ? 'http://localhost:9000' : 'https://skillbox-reddit.herokuapp.com';
+
 
 module.exports = {
   resolve: {
     extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
     alias: {
       "react-dom": IS_DEV ? "@hot-loader/react-dom" : "react-dom",
-    }
+    },
   },
 
   mode: NODE_ENV ? NODE_ENV : "development",
@@ -30,11 +29,24 @@ module.exports = {
 
   devtool: IS_DEV ? "source-map" : "",
 
-  plugins: [
-    IS_DEV ? new CleanWebpackPlugin() : null,
-    new HotModuleReplacementPlugin(),
-    new DefinePlugin({"process.env.CLIENT_ID": `${CLIENT_ID}`, "process.env.URI": `${URI}`}),
-  ],
+  plugins: IS_DEV
+    ? [
+        new CleanWebpackPlugin(),
+        new HotModuleReplacementPlugin(),
+        new DefinePlugin({
+          "process.env.CLIENT_ID": JSON.stringify('tEnmcP62ZX80rQ'),
+          "process.env.URI": JSON.stringify('http://localhost:9000'),
+          "process.env.SECRET": JSON.stringify('WdtP8Xgim-btpjaKsgi7smwRdawUHQ'),
+        }),
+      ]
+    : [
+        new CleanWebpackPlugin(),
+        new DefinePlugin({
+          "process.env.CLIENT_ID": JSON.stringify('BSNjBV-kKsm3bA'),
+          "process.env.URI": JSON.stringify('https://skillbox-reddit.herokuapp.com'),
+          "process.env.SECRET": JSON.stringify('Jd3n_CIKmzYxmSwTqmioMdLpH9bpiw'),
+        }),
+      ],
 
   module: {
     rules: [
@@ -45,15 +57,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader", {
+          "style-loader",
+          {
             loader: "css-loader",
             options: {
               modules: {
                 mode: "local",
                 localIdentName: "[name]__[local]--[hash:base64:5]",
               },
-            }
-          }
+            },
+          },
         ],
         exclude: GLOBAL_CSS_REGEXP,
       },
@@ -67,7 +80,7 @@ module.exports = {
         options: {
           outputPath: "img",
           name: IS_DEV ? "[name].[ext]" : "[name].[hash:base64:5].[ext]",
-        }
+        },
       },
       {
         test: /\.svg(\?.*)?$/,
@@ -77,9 +90,9 @@ module.exports = {
         test: /\.(woff|woff2)$/i,
         loader: "file-loader",
         options: {
-          outputPath: "fonts",           
+          outputPath: "fonts",
           name: IS_DEV ? "[name].[ext]" : "[name].[hash:base64:5].[ext]",
-          },
+        },
       },
     ],
   },

@@ -5,8 +5,6 @@ const nodeExternals = require("webpack-node-externals");
 const NODE_ENV = process.env.NODE_ENV;
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
 const IS_DEV = NODE_ENV == "development";
-const CLIENT_ID = IS_DEV ? 'tEnmcP62ZX80rQ' : 'BSNjBV-kKsm3bA';
-const URI = IS_DEV ? 'http://localhost:9000' : 'https://skillbox-reddit.herokuapp.com';
 
 
 module.exports = {
@@ -14,7 +12,7 @@ module.exports = {
     extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
   },
 
-mode: NODE_ENV ? NODE_ENV : "development",
+  mode: NODE_ENV ? NODE_ENV : "development",
 
   target: "node",
 
@@ -31,11 +29,24 @@ mode: NODE_ENV ? NODE_ENV : "development",
     minimize: false,
   },
 
-  plugins: [
-    new CleanWebpackPlugin(),
-    new DefinePlugin({"process.env.CLIENT_ID": `${CLIENT_ID}`, "process.env.URI": `${URI}`})
-  ],
-  
+  plugins: IS_DEV
+  ? [
+      new CleanWebpackPlugin(),
+      new DefinePlugin({
+        "process.env.CLIENT_ID": JSON.stringify('tEnmcP62ZX80rQ'),
+        "process.env.URI": JSON.stringify('http://localhost:9000'),
+        "process.env.SECRET": JSON.stringify('WdtP8Xgim-btpjaKsgi7smwRdawUHQ'),
+      }),
+    ]
+  : [
+      new CleanWebpackPlugin(),
+      new DefinePlugin({
+        "process.env.CLIENT_ID": JSON.stringify('BSNjBV-kKsm3bA'),
+        "process.env.URI": JSON.stringify('https://skillbox-reddit.herokuapp.com'),
+        "process.env.SECRET": JSON.stringify('Jd3n_CIKmzYxmSwTqmioMdLpH9bpiw'),
+      }),
+    ],
+
   module: {
     rules: [
       {
@@ -68,8 +79,8 @@ mode: NODE_ENV ? NODE_ENV : "development",
         options: {
           outputPath: "img",
           name: IS_DEV ? "[name].[ext]" : "[name].[hash:base64:5].[ext]",
-        }
-      },      
+        },
+      },
       {
         test: /\.svg(\?.*)?$/,
         use: ["url-loader", "svg-transform-loader"],
@@ -78,9 +89,9 @@ mode: NODE_ENV ? NODE_ENV : "development",
         test: /\.(woff|woff2)$/i,
         loader: "file-loader",
         options: {
-          outputPath: "fonts",           
+          outputPath: "fonts",
           name: IS_DEV ? "[name].[ext]" : "[name].[hash:base64:5].[ext]",
-          },
+        },
       },
     ],
   },
