@@ -10,7 +10,7 @@ import helmet from "helmet";
 const PORT = process.env.PORT || 9000;
 const app = express();
 
-if (!!process.env.IS_DEV) {
+if (process.env.IS_BUILD != "development") {
   app.use(helmet({
     contentSecurityPolicy: false,
   }));

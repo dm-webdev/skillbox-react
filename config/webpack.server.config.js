@@ -32,7 +32,7 @@ module.exports = {
     ? [
         new CleanWebpackPlugin(),
         new DefinePlugin({
-          "process.env.IS_DEV": JSON.stringify("development"),
+          "process.env.IS_BUILD": JSON.stringify("development"),
           "process.env.CLIENT_ID": JSON.stringify("tEnmcP62ZX80rQ"),
           "process.env.URI": JSON.stringify("http://localhost:9000"),
           "process.env.SECRET": JSON.stringify(
@@ -44,6 +44,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new DefinePlugin({
           __REACT_DEVTOOLS_GLOBAL_HOOK__: "({ isDisabled: true })",
+          "process.env.IS_BUILD": JSON.stringify("production"),
           "process.env.CLIENT_ID": JSON.stringify("BSNjBV-kKsm3bA"),
           "process.env.URI": JSON.stringify(
             "https://skillbox-reddit.herokuapp.com"

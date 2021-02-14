@@ -18,7 +18,7 @@ import { Page404 } from "./shared/Layout/pages/page404";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const devTools =
-  process.env.IS_DEV === "development"
+process.env.IS_BUILD === "development"
     ? composeWithDevTools(applyMiddleware(thunk))
     : applyMiddleware(thunk);
 
