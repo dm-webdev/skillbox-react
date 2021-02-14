@@ -71,7 +71,6 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "style-loader": "^1.3.0",
     "svg-transform-loader": "^2.0.13",
@@ -87,5 +86,8 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-node-externals": "^2.5.2"
   },
-  "proxy": "http://localhost:9000"
+  "proxy": "http://localhost:9000",
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.8"
+  }
 }
