@@ -1,13 +1,11 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { HotModuleReplacementPlugin, DefinePlugin } = require("webpack");
-// const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV == "development";
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
-// const COMMON_PLUGINS = [ new DefinePlugin({"process.env.CLIENT_ID": ""tEnmcP62ZX80r""})]
-// const IS_PROD = NODE_ENV == 'production';
+const CLIENT_ID = IS_DEV ? 'tEnmcP62ZX80rQ' : 'BSNjBV-kKsm3bA';
+const URI = IS_DEV ? 'http://localhost:9000' : 'https://skillbox-reddit.herokuapp.com';
 
 module.exports = {
   resolve: {
@@ -32,16 +30,12 @@ module.exports = {
 
   devtool: IS_DEV ? "source-map" : "",
 
-  plugins: IS_DEV 
-  ? [
-    new CleanWebpackPlugin(),
-    new HotModuleReplacementPlugin(),
-    new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80rQ'"}),
-  ]
-  : [
-    new CleanWebpackPlugin(),
-    new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80rQ'"}),
-  ],
+  plugins:
+    [
+      IS_DEV ? new HotModuleReplacementPlugin() : null,
+      new CleanWebpackPlugin(),      
+      new DefinePlugin({"process.env.CLIENT_ID": `${CLIENT_ID}`, "process.env.URI": `${URI}`}),
+    ],
 
   module: {
     rules: [
