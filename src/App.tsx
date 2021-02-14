@@ -20,7 +20,7 @@ import { Page404 } from "./shared/Layout/pages/page404";
 
 const IS_DEV = process.env.NODE_ENV == "development";
 
-function getMiddelware() {
+function getMiddleware() {
   if (IS_DEV) {
     return composeWithDevTools(applyMiddleware(thunk))
   }
@@ -29,7 +29,7 @@ function getMiddelware() {
 
 export const store = createStore(
   rootReducer,
-  getMiddelware()
+  getMiddleware()
 );
 
 function AppComponent() {
