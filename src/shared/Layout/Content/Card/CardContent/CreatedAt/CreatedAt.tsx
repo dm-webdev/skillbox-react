@@ -1,7 +1,7 @@
 import React from "react";
 import { getCreatedAt } from "../../../../../../utils/react/getCreatedAt";
 import styles from "./createdat.css";
-import classNames from "classNames";
+import classNames from "classnames";
 
 interface ICreateDate {
   createDate: string;

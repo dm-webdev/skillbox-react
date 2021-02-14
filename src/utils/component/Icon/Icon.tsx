@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './icon.css';
-import classNames from "classNames";
+import classNames from "classnames";
 
 type TIconSize = 14 | 20 | 30 | 40 | 50;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './karmacount.css';
-import classNames from "classNames";
+import classNames from "classnames";
 
 interface IKarmaCoutnBtn {
   id: string;

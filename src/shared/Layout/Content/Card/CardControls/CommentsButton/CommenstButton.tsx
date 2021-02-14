@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './commentsbutton.css';
-import classNames from "classNames";
+import classNames from "classnames";
 import { getCountTitle } from '../../../../../../utils/react/getCountTitle';
 
 interface ICommentsBtn {

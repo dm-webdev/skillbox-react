@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./sharebutton.css";
-import classNames from "classNames";
+import classNames from "classnames";
 
 interface IShareBtn {
   id: string;

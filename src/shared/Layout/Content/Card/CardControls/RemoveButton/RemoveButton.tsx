@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./removebutton.css";
-import classNames from "classNames";
+import classNames from "classnames";
 
 interface IRemoveBtn {
   id: string;

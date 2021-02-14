@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./cardcontent.css";
 import { CreatedAt } from "./CreatedAt";
-import classNames from "classNames";
+import classNames from "classnames";
 import { ICommentCard } from "../../../Modal/CommentList/CommentCard/CommentCard";
 import { ICard } from "../../../../../store/contentReducer/contentReducer";
 import { Link } from "react-router-dom";

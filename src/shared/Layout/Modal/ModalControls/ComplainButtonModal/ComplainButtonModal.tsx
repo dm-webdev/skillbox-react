@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './complainbuttonmodal.css';
 import { Icon, EIcons } from '../../../../../utils/component/Icon';
-import classNames from "classNames";
+import classNames from "classnames";
 
 
 interface IComplainButtonModal {
