@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import React from "react";
 import styles from "./text.css";
-import classNames from "classNames"
 
 type TSizes = 28 | 20 | 16 | 14 | 12 | 10; //uniot type
 

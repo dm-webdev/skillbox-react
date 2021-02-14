@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { TRootReducer } from '../../store/rootReducer';
-import { Alert } from './Common/alert';
+import { Alert } from './Common/Alert';
 import { Loader } from './Common/Loader';
 import styles from "./layout.css";
 

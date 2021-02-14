@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { hot } from "react-hot-loader/root";
-
 import "./shared/assets/css/main.global.css";
 import "./shared/assets/css/normalize.global.css";
 import "./shared/assets/css/fonts.global.css";
-
 import { Layout } from "./shared/Layout";
 import { Content } from "./shared/Layout/Content";
 import { CardsList } from "./shared/Layout/Content/CardsList";
@@ -16,7 +14,6 @@ import { applyMiddleware, createStore } from "redux";
 import { rootReducer } from "./store/rootReducer";
 import thunk from "redux-thunk";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import { Modal } from "./shared/Layout/Modal";
 import { Home } from "./shared/Layout/pages/Home";
 import { Page404 } from "./shared/Layout/pages/page404";
 
