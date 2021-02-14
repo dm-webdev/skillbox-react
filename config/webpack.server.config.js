@@ -5,8 +5,8 @@ const nodeExternals = require("webpack-node-externals");
 const NODE_ENV = process.env.NODE_ENV;
 const GLOBAL_CSS_REGEXP = /\.global\.css$/;
 const IS_DEV = NODE_ENV == "development";
-const CLIENT_ID = IS_DEV ? 'tEnmcP62ZX80rQ' : 'BSNjBV-kKsm3bA';
-const URI = IS_DEV ? 'http://localhost:9000' : 'https://skillbox-reddit.herokuapp.com';
+// const CLIENT_ID = IS_DEV ? 'tEnmcP62ZX80rQ' : 'BSNjBV-kKsm3bA';
+// const URI = IS_DEV ? 'http://localhost:9000' : 'https://skillbox-reddit.herokuapp.com';
 
 
 module.exports = {
@@ -31,12 +31,16 @@ mode: NODE_ENV ? NODE_ENV : "development",
     minimize: false,
   },
 
-  plugins:
-  [
+  plugins: IS_DEV 
+  ? [
     new CleanWebpackPlugin(),
-    new DefinePlugin({"process.env.CLIENT_ID": `${CLIENT_ID}`, "process.env.URI": `${URI}`}),
+    new DefinePlugin({"process.env.CLIENT_ID": "'tEnmcP62ZX80rQ'", "process.env.URI": "'http://localhost:9000'"}),
+  ]
+  : [
+    new CleanWebpackPlugin(),
+    new DefinePlugin({"process.env.CLIENT_ID": "'BSNjBV-kKsm3bA'", "process.env.URI": "'https://skillbox-reddit.herokuapp.com'"}),
   ],
-
+  
   module: {
     rules: [
       {

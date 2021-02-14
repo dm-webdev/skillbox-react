@@ -14,7 +14,7 @@ app.get("/auth", (req, res) => {
   axios
     .post(
       "https://www.reddit.com/api/v1/access_token",
-      `grant_type=authorization_code&code=${req.query.code}&redirect_uri=${process.env.URI}/auth`,
+      `grant_type=authorization_code&code=${req.query.code}&redirect_uri=http://localhost:9000/auth`,
       {
         auth: {
           username: process.env.CLIENT_ID,
@@ -26,7 +26,6 @@ app.get("/auth", (req, res) => {
     .then(({ data }) => {
       res.send(
         indexTemplate(ReactDOM.renderToString(App()), data["access_token"])
-      );
     })
     .catch(console.log);
 });
