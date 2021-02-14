@@ -9,28 +9,20 @@ import { CardsList } from "./shared/Layout/Content/CardsList";
 import { Header } from "./shared/Layout/Header";
 import { commentContext } from "./shared/context/commentContext";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
 import { applyMiddleware, createStore } from "redux";
 import { rootReducer } from "./store/rootReducer";
 import thunk from "redux-thunk";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Home } from "./shared/Layout/pages/Home";
 import { Page404 } from "./shared/Layout/pages/page404";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-
-const IS_DEV = process.env.NODE_ENV == "development";
-
-function getMiddleware() {
-  if (IS_DEV) {
-    return composeWithDevTools(applyMiddleware(thunk))
-  }
-  return applyMiddleware(thunk)
-}
-
-export const store = createStore(
-  rootReducer,
-  getMiddleware()
-);
+const devTools = 
+  process.env.IS_DEV == "development" ? 
+    composeWithDevTools(applyMiddleware(thunk)) :
+    applyMiddleware(thunk);
+    
+export const store = createStore(rootReducer, devTools);
 
 function AppComponent() {
   const [commentValue, setCommentValue] = useState("");
