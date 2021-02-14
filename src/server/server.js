@@ -8,15 +8,16 @@ import helmet from "helmet";
 
 
 const PORT = process.env.PORT || 9000;
-const IS_DEV = process.env.IS_DEV == 'development'
 const app = express();
 
-if (!IS_DEV) {
+if (!!process.env.IS_DEV) {
   app.use(helmet({
-    contentSecurityPolicy=false,
+    contentSecurityPolicy: false,
   }));
+
   app.use(compression());
 }
+
 app.use("/static", express.static("./dist/client"));
 app.get("/auth", (req, res) => {
   axios

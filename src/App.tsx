@@ -17,9 +17,19 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Home } from "./shared/Layout/pages/Home";
 import { Page404 } from "./shared/Layout/pages/page404";
 
+
+const IS_DEV = process.env.NODE_ENV == "development";
+
+function getMiddelware() {
+  if (IS_DEV) {
+    return composeWithDevTools(applyMiddleware(thunk))
+  }
+  return applyMiddleware(thunk)
+}
+
 export const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+  getMiddelware()
 );
 
 function AppComponent() {
